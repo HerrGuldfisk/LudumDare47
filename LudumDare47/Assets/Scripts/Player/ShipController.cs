@@ -8,8 +8,13 @@ public class ShipController : MonoBehaviour
     [SerializeField] float startSpeed = 2;
 	[SerializeField] float accAmount = 4;
     [SerializeField] float fuelCost = 5;
+
+    [SerializeField] AudioClip accSound;
+    [SerializeField] AudioClip breakSound;
+
     private Rigidbody2D rb;
     private FuelSystem fuelSystem;
+    private audioManager audioManager;
     public InputAction gas;
 
     private void OnEnable()
@@ -27,6 +32,7 @@ public class ShipController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         fuelSystem = GetComponent<FuelSystem>();
         rb.velocity = new Vector2(startSpeed, 0);
+        audioManager = GameObject.FindGameObjectWithTag("AudioController").transform.GetComponent<audioManager>();
     }
 
     private void Update()
@@ -41,6 +47,21 @@ public class ShipController : MonoBehaviour
             rb.AddForce(rb.velocity.normalized * gas.ReadValue<Vector2>().y * accAmount);
             rb.AddForce(new Vector2(rb.velocity.normalized.y , -rb.velocity.normalized.x) * gas.ReadValue<Vector2>().x * accAmount);
             fuelSystem.DepleteFuel(fuelCost*Time.deltaTime);
+
+            if (gas.ReadValue<Vector2>().y > 0)
+            {
+                audioManager.playSound(accSound);
+            }
+            else if (gas.ReadValue<Vector2>().y < 0)
+            {
+                audioManager.playSound(breakSound);
+            }
+        }
+        
+        if (gas.ReadValue<Vector2>().y == 0)
+        {
+            audioManager.stopPlaying(accSound);
+            audioManager.stopPlaying(breakSound);
         }
     }
 
