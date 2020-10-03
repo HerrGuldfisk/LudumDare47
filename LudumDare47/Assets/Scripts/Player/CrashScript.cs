@@ -10,7 +10,7 @@ public class CrashScript : MonoBehaviour
         {
             Debug.Log("Collision with " + collision.gameObject.name);
 
-            GameManager.PlayerCrash();
+            GameManager.PlayerDeath();
 
             Destroy(this.gameObject);
         }
