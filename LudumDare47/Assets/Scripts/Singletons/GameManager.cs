@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -23,14 +25,16 @@ public class GameManager : MonoBehaviour
 		{
 			_instance = this;
 		}
+
+		
 	}
 
 	public static void PlayerDeath()
 	{
+
 		if (!destroyed)
 		{
-			Debug.Log("Your ship crashed.");
 			destroyed = true;
 		}
-	}
+	}	
 }

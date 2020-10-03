@@ -10,6 +10,8 @@ TagManager:
   - Orbit
   - Planet
   - FuelRefill
+  - CrashText
+  - CrashMenu
   layers:
   - Default
   - TransparentFX
