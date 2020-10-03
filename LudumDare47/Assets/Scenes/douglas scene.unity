@@ -238,8 +238,8 @@ GameObject:
   m_Component:
   - component: {fileID: 485376011}
   - component: {fileID: 485376009}
-  - component: {fileID: 485376010}
   - component: {fileID: 485376006}
+  - component: {fileID: 485376010}
   - component: {fileID: 485376007}
   - component: {fileID: 485376008}
   m_Layer: 0
@@ -363,6 +363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startSpeed: 10
   accAmount: 12
+  fuelCost: 5
   gas:
     m_Name: Gas
     m_Type: 0
