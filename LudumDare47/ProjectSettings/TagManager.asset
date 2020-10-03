@@ -9,6 +9,7 @@ TagManager:
   - AudioController
   - Orbit
   - Planet
+  - FuelRefill
   layers:
   - Default
   - TransparentFX

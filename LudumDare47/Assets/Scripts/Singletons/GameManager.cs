@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
 	public static GameManager _instance;
 	public static GameManager Instance { get { return _instance; } }
 
+	public static float currentFuel;
+	private static bool destroyed;
+
 	private void Awake()
 	{
 		DontDestroyOnLoad(gameObject);
@@ -22,6 +25,10 @@ public class GameManager : MonoBehaviour
 
 	public static void PlayerCrash()
 	{
-		
+		if (!destroyed)
+		{
+			Debug.Log("Your ship crashed.");
+			destroyed = true;
+		}
 	}
 }

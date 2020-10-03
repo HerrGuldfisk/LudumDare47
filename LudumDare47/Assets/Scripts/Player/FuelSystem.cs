@@ -7,36 +7,44 @@ public class FuelSystem : MonoBehaviour
 {
     [SerializeField] float max = 100;
     [SerializeField] float standbyDepletion = 1;
-    private float current;
     private Slider fuelSlider;
     private bool shipTurnedOff = false;
 
     private void Awake()
     {
-        current = max;
+        GameManager.currentFuel = max;
         fuelSlider = GameObject.FindGameObjectWithTag("fuelBar").transform.GetComponent<Slider>();
     }
 
     void Update()
     {
-        current -= standbyDepletion * Time.deltaTime;
+        GameManager.currentFuel -= standbyDepletion * Time.deltaTime;
         updateSlider();
 
-        if (!shipTurnedOff && current < 0)
+        if (!shipTurnedOff && GameManager.currentFuel < 0)
         {
             shipTurnedOff = true;
             GetComponent<ShipController>().gas.Disable();
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
+        else if (GameManager.currentFuel < 0)
+        {
+            FuelIsEmpty();
+        }
     }
 
     public void DepleteFuel(float amount)
     {
-        current -= amount;
+        GameManager.currentFuel -= amount;
     }
 
     private void updateSlider()
     {
-        fuelSlider.value = current / max;
+        fuelSlider.value = GameManager.currentFuel / max;
+    }
+
+    private void FuelIsEmpty()
+    {
+        GameManager.PlayerCrash();
     }
 }
