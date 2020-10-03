@@ -8,6 +8,7 @@ public class FuelSystem : MonoBehaviour
     [SerializeField] float standbyDepletion = 1;
     private Slider fuelSlider;
     private bool shipTurnedOff = false;
+    private bool inOrbit = false;
 
     private void Awake()
     {
@@ -17,7 +18,11 @@ public class FuelSystem : MonoBehaviour
 
     void Update()
     {
-        GameManager.currentFuel -= standbyDepletion * Time.deltaTime;
+        if (inOrbit)
+        {
+            GameManager.currentFuel -= standbyDepletion * Time.deltaTime;
+        }
+        
         updateSlider();
 
         if (!shipTurnedOff && GameManager.currentFuel < 0)
@@ -25,9 +30,6 @@ public class FuelSystem : MonoBehaviour
             shipTurnedOff = true;
             GetComponent<ShipController>().gas.Disable();
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        }
-        else if (GameManager.currentFuel < 0)
-        {
             FuelIsEmpty();
         }
     }
