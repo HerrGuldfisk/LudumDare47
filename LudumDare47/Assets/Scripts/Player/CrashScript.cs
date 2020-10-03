@@ -11,4 +11,9 @@ public class CrashScript : MonoBehaviour
         Debug.Log("You crashed!");
         Destroy(gameObject);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
+    }
 }
