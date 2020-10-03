@@ -8,11 +8,8 @@ public class CrashScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Planet"))
         {
-            Debug.Log("Collision with " + collision.gameObject.name);
-
             GameManager.PlayerDeath();
-
-            Destroy(this.gameObject);
+            GetComponent<Death>().PlayerDeath("THE SHIP WAS OBLITERATED");
         }
     }
 }
