@@ -5,14 +5,13 @@ using UnityEngine.UI;
 
 public class FuelSystem : MonoBehaviour
 {
-    [SerializeField] float max = 100;
     [SerializeField] float standbyDepletion = 1;
     private Slider fuelSlider;
     private bool shipTurnedOff = false;
 
     private void Awake()
     {
-        GameManager.currentFuel = max;
+        GameManager.currentFuel = GameManager.maxFuel;
         fuelSlider = GameObject.FindGameObjectWithTag("fuelBar").transform.GetComponent<Slider>();
     }
 
@@ -40,7 +39,7 @@ public class FuelSystem : MonoBehaviour
 
     private void updateSlider()
     {
-        fuelSlider.value = GameManager.currentFuel / max;
+        fuelSlider.value = GameManager.currentFuel / GameManager.maxFuel;
     }
 
     private void FuelIsEmpty()

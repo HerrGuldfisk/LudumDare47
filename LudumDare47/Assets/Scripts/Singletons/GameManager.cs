@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 	public static GameManager Instance { get { return _instance; } }
 
 	public static float currentFuel;
+	public static float maxFuel = 100;
+
 	private static bool destroyed;
 
 	private void Awake()
