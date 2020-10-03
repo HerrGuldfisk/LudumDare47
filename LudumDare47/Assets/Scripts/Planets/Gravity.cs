@@ -29,9 +29,10 @@ public class Gravity : MonoBehaviour
 	{
 		if (collision.CompareTag("Ship"))
 		{
-			/*ship = collision.GetComponentInParent<ShipController>();
+			ship = collision.GetComponentInParent<GravityController>();
 			ship.gravity = gravity;
-			ship.inAtmosphere = true;
+			ship.gravityCenter = Trasform;
+			/// ship.inAtmosphere = true;
 		}
 	}
 
@@ -39,9 +40,9 @@ public class Gravity : MonoBehaviour
 	{
 		if (collision.CompareTag("Ship"))
 		{
-			ship = collision.GetComponentInParent<ShipController>();
-			ship.inAtmosphere = false;
-			ship.gravity = 0;*/
+			ship = collision.GetComponentInParent<GravityController>();
+			/// ship.inAtmosphere = false;
+			ship.gravity = 0;
 		}
 	}
 }
