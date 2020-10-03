@@ -31,10 +31,11 @@ public class Gravity : MonoBehaviour
 		{
 			collision.GetComponent<GravityController>().gravityCenter = transform;
 			collision.GetComponent<GravityController>().gravity = gravity;
+			collision.GetComponent<GravityController>().inAtmosphere = true;
+			Camera.main.GetComponent<CameraFollow>().followTarget = gameObject;
 			// ship.gravity = gravity;
 			// ship.gravityCenter = transform;
 			Debug.Log("Entering planet orbit " + collision.GetComponent<GravityController>().gravity);
-			/// ship.inAtmosphere = true;
 		}
 	}
 
@@ -43,8 +44,9 @@ public class Gravity : MonoBehaviour
 		if (collision.CompareTag("Ship"))
 		{
 			ship = collision.GetComponent<GravityController>();
-			/// ship.inAtmosphere = false;
+			collision.GetComponent<GravityController>().inAtmosphere = false;
 			ship.gravity = 0;
+			Camera.main.GetComponent<CameraFollow>().followTarget = collision.gameObject;
 			Debug.Log("Leaving planet orbit " + collision.GetComponent<GravityController>().gravity);
 		}
 	}

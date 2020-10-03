@@ -11,8 +11,8 @@ public class CameraFollowScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Vector3 desiredPosition = new Vector3(target.position.x, target.position.y, -10);
-        Vector3 smoothedPosition = Vector3.Lerp(new Vector3(transform.position.x, transform.position.y, -10), desiredPosition, smoothSpeed);
-        transform.position = smoothedPosition;
-    }
+        Vector3 desiredPosition = new Vector3(target.position.x, target.position.y, -100);
+        Vector3 smoothedPosition = Vector3.Lerp(new Vector3(transform.position.x, transform.position.y, -100), desiredPosition, smoothSpeed);
+		transform.position = smoothedPosition;
+	}
 }

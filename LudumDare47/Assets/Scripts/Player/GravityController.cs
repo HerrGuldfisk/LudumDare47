@@ -6,6 +6,7 @@ public class GravityController : MonoBehaviour
 {
     public float gravity;
     public Transform gravityCenter = null;
+	public bool inAtmosphere;
 
     void Update()
     {
