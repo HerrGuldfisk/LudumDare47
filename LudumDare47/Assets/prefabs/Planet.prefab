@@ -127,6 +127,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2784604848388007869, guid: 02f976489d2fb7d49b3824812a535189, type: 3}
+      propertyPath: m_TagString
+      value: Planet
+      objectReference: {fileID: 0}
     - target: {fileID: 3309925788111813895, guid: 02f976489d2fb7d49b3824812a535189, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
