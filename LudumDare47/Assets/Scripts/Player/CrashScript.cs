@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class CrashScript : MonoBehaviour
 {
-    GameObject gameObject;
-
-    void Crash()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("You crashed!");
-        Destroy(gameObject);
+        if (collision.gameObject.CompareTag("planet"))
+        {
+            Debug.Log("Collision with " + collision.gameObject.name);
+
+            GameManager.PlayerCrash();
+
+            Destroy(this.gameObject);
+        }
     }
 }

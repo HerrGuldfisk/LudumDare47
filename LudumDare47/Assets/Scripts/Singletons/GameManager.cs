@@ -19,4 +19,9 @@ public class GameManager : MonoBehaviour
 			_instance = this;
 		}
 	}
+
+	public static void PlayerCrash()
+	{
+		
+	}
 }
