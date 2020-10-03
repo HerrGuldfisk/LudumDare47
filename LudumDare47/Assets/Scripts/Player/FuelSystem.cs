@@ -44,6 +44,6 @@ public class FuelSystem : MonoBehaviour
 
     private void FuelIsEmpty()
     {
-        GameManager.PlayerCrash();
+        GameManager.PlayerDeath();
     }
 }

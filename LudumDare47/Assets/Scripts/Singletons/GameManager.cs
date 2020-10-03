@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-	public static void PlayerCrash()
+	public static void PlayerDeath()
 	{
 		if (!destroyed)
 		{
