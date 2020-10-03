@@ -6,7 +6,9 @@ TagManager:
   tags:
   - Ship
   - fuelBar
-  - planet
+  - AudioController
+  - Orbit
+  - Planet
   layers:
   - Default
   - TransparentFX

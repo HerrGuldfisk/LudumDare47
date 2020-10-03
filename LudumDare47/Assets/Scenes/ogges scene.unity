@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 459222192}
   m_Layer: 0
   m_Name: Planet
-  m_TagString: Untagged
+  m_TagString: Orbit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1458,6 +1458,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravity: 0.05
   gravityCenter: {fileID: 0}
+  inAtmosphere: 0
 --- !u!4 &2710889647027388740
 Transform:
   m_ObjectHideFlags: 0
@@ -1486,7 +1487,7 @@ GameObject:
   - component: {fileID: 1670909214}
   m_Layer: 0
   m_Name: Earth
-  m_TagString: planet
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
