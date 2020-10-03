@@ -872,6 +872,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShipTest
       objectReference: {fileID: 0}
+    - target: {fileID: 1011510677133916729, guid: 06ba966c8ff8dc44d973ca096034ef95, type: 3}
+      propertyPath: accAmount
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1011510677133916731, guid: 06ba966c8ff8dc44d973ca096034ef95, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.148

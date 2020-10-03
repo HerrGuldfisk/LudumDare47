@@ -35,7 +35,7 @@ public class ShipController : MonoBehaviour
         audioManager = GameObject.FindGameObjectWithTag("AudioController").transform.GetComponent<audioManager>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         var dir = rb.velocity.normalized;
 
@@ -45,7 +45,7 @@ public class ShipController : MonoBehaviour
         if (gas.ReadValue<Vector2>() != Vector2.zero)
         {
             rb.AddForce(rb.velocity.normalized * gas.ReadValue<Vector2>().y * accAmount);
-            rb.AddForce(new Vector2(rb.velocity.normalized.y , -rb.velocity.normalized.x) * gas.ReadValue<Vector2>().x * accAmount);
+            rb.AddForce(new Vector2(rb.velocity.normalized.y , -rb.velocity.normalized.x) * gas.ReadValue<Vector2>().x * accAmount * 4f);
             fuelSystem.DepleteFuel(fuelCost*Time.deltaTime);
 
             if (gas.ReadValue<Vector2>().y > 0)
@@ -57,7 +57,7 @@ public class ShipController : MonoBehaviour
                 audioManager.playSound(breakSound);
             }
         }
-        
+
         if (gas.ReadValue<Vector2>().y == 0)
         {
             audioManager.stopPlaying(accSound);
