@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class ShipController : MonoBehaviour
 {
     [SerializeField] float startSpeed = 2;
-    [SerializeField] float accAmount = 1;
+	[SerializeField] float accAmount = 1;
     private Rigidbody2D rb;
     public InputAction gas;
 
@@ -30,10 +30,9 @@ public class ShipController : MonoBehaviour
     {
         var dir = rb.velocity.normalized;
 
-        rb.velocity += dir*gas.ReadValue<float>() * accAmount * Time.deltaTime;
+		rb.velocity += dir*gas.ReadValue<float>() * accAmount * Time.deltaTime;
 
-
-        var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+		var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 

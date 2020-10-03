@@ -5,7 +5,7 @@ using UnityEngine;
 public class Gravity : MonoBehaviour
 {
 	CircleCollider2D atmosphere;
-	GameObject ship;
+	GravityController ship;
 	public float gravity;
 
     // Start is called before the first frame update
@@ -24,14 +24,16 @@ public class Gravity : MonoBehaviour
 	{
 
 	}
-	/*
+
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (collision.CompareTag("Ship"))
 		{
-			ship = collision.GetComponentInParent<GravityController>();
-			ship.gravity = gravity;
-			ship.gravityCenter = Trasform;
+			collision.GetComponent<GravityController>().gravityCenter = transform;
+			collision.GetComponent<GravityController>().gravity = gravity;
+			// ship.gravity = gravity;
+			// ship.gravityCenter = transform;
+			Debug.Log("Entering planet orbit " + collision.GetComponent<GravityController>().gravity);
 			/// ship.inAtmosphere = true;
 		}
 	}
@@ -40,10 +42,10 @@ public class Gravity : MonoBehaviour
 	{
 		if (collision.CompareTag("Ship"))
 		{
-			ship = collision.GetComponentInParent<GravityController>();
+			ship = collision.GetComponent<GravityController>();
 			/// ship.inAtmosphere = false;
 			ship.gravity = 0;
+			Debug.Log("Leaving planet orbit " + collision.GetComponent<GravityController>().gravity);
 		}
 	}
-	*/
 }
