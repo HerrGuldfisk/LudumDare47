@@ -24,7 +24,7 @@ public class Gravity : MonoBehaviour
 	{
 
 	}
-
+	/*
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (collision.CompareTag("Ship"))
@@ -45,4 +45,5 @@ public class Gravity : MonoBehaviour
 			ship.gravity = 0;
 		}
 	}
+	*/
 }
