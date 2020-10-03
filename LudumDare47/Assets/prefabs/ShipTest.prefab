@@ -99,6 +99,46 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Gas
       m_Flags: 8
+    - m_Name: 2D Vector
+      m_Id: 5f935436-8346-4678-8ecb-e2ea21b4818d
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Gas
+      m_Flags: 4
+    - m_Name: up
+      m_Id: bfb95be9-ed2f-4bfa-8d22-72629b7d3577
+      m_Path: <Keyboard>/1
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Gas
+      m_Flags: 8
+    - m_Name: down
+      m_Id: fb65dd03-1136-46ca-91a8-c454a8fd96d3
+      m_Path: <Keyboard>/1
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Gas
+      m_Flags: 8
+    - m_Name: left
+      m_Id: b46375f8-9dd6-43c6-abf1-f1f670e6f666
+      m_Path: <Keyboard>/1
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Gas
+      m_Flags: 8
+    - m_Name: right
+      m_Id: 7370c520-5726-4f66-bcd8-1fcd4a950092
+      m_Path: <Keyboard>/1
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Gas
+      m_Flags: 8
 --- !u!114 &1515619420893600985
 MonoBehaviour:
   m_ObjectHideFlags: 0
