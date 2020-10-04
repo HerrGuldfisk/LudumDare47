@@ -10,7 +10,7 @@ public class ShipController : MonoBehaviour
     [SerializeField] float fuelCostGas = 5;
 	[SerializeField] float fuelCost = 5;
 	[SerializeField] float fuelCostTurn = 2;
-    [SerializeField] SpriteRenderer flameSprite; 
+    [SerializeField] SpriteRenderer flameSprite;
 
     [SerializeField] AudioClip accSound;
     [SerializeField] AudioClip breakSound;
@@ -73,18 +73,21 @@ public class ShipController : MonoBehaviour
             if (gas.ReadValue<Vector2>().y > 0)
             {
                 audioManager.playSound(accLoopSound);
-                flameSprite.enabled = true;
             }
             else if (gas.ReadValue<Vector2>().y < 0)
             {
                 audioManager.playSound(breakLoopSound);
-                flameSprite.enabled = false;
-            }
-            else
-            {
-                flameSprite.enabled = false;
             }
         }
+
+		if ( gasVector.y > 0)
+		{
+			flameSprite.enabled = true;
+		}
+		else
+		{
+			flameSprite.enabled = false;
+		}
 
         if (gas.ReadValue<Vector2>().y == 0)
         {
