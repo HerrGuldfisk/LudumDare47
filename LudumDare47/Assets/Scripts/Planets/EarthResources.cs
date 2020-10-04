@@ -9,13 +9,13 @@ public class EarthResources : MonoBehaviour
     [SerializeField] float spawnInterval = 0.2f;
     [SerializeField] GameObject resource;
     [SerializeField] Transform planet;
-    private int current;
+	private int current;
     private bool isSpawning;
     private float timer = 0;
     private shipResources shipResources;
     private Slider slider;
     private Text text;
-    private GameObject crashmenu;
+    public GameObject crashmenu;
 
 
     private void Awake()

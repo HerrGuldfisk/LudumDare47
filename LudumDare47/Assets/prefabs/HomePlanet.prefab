@@ -93,9 +93,9 @@ GameObject:
   - component: {fileID: 5095512250395213366}
   - component: {fileID: 5095512250395213365}
   - component: {fileID: 5095512250395213367}
-  - component: {fileID: 6304804121427187802}
+  - component: {fileID: 7359503888608194773}
   m_Layer: 8
-  m_Name: Planet
+  m_Name: HomePlanet
   m_TagString: Orbit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,7 +112,7 @@ Transform:
   m_LocalPosition: {x: 0.3, y: -22, z: 0}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children:
-  - {fileID: 289356015900461059}
+  - {fileID: 1466002816119744273}
   - {fileID: 7735445362577655887}
   - {fileID: 791940977}
   m_Father: {fileID: 0}
@@ -147,7 +147,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
---- !u!114 &6304804121427187802
+--- !u!114 &7359503888608194773
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -156,12 +156,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5095512250395213361}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b938df42b2e7ae34d826b448528e1a47, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ce7eb735a79fb645a16fc856cb2a14e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  max: 10
+  max: 50
   spawnInterval: 0.2
-  resource: {fileID: 6839506263126375826, guid: 8d7d5d6a1b84a4e4d9df2c9449352ae1, type: 3}
+  resource: {fileID: 6839506263126375826, guid: 71bb4737c032d7342aa57447298fec75, type: 3}
+  planet: {fileID: 7735445362577655887}
 --- !u!50 &5095512250482783564
 Rigidbody2D:
   serializedVersion: 4
@@ -229,7 +230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 2.5
---- !u!1001 &674250358124517307
+--- !u!1001 &1801683018950490281
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -334,10 +335,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95cfa296062505d40a13db5a588b5a06, type: 3}
---- !u!224 &289356015900461059 stripped
+--- !u!224 &1466002816119744273 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 961682226090581944, guid: 95cfa296062505d40a13db5a588b5a06, type: 3}
-  m_PrefabInstance: {fileID: 674250358124517307}
+  m_PrefabInstance: {fileID: 1801683018950490281}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5095512250482783560
 PrefabInstance:
