@@ -60,7 +60,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: b4d0619f697268c459b415cf8ee91240, type: 3}
   accLoopSound: {fileID: 8300000, guid: 2d671dac4b9991d45bfafb380e8e04e7, type: 3}
   breakLoopSound: {fileID: 8300000, guid: ceaadc2ed8506f446b81bd58cb608cba, type: 3}
-  enterSound: {fileID: 8300000, guid: 362f37acb329cbe43aed8d98cfd40cb3, type: 3}
+  enterSound: {fileID: 8300000, guid: 0bd2dae9570682f408b657e4f25a2931, type: 3}
   exitSound: {fileID: 8300000, guid: 1804a8a343e2d8945b2ec5bc9490bbf4, type: 3}
   crashSound: {fileID: 8300000, guid: 935cd084700d79041aee48f8a2812161, type: 3}
   gas:

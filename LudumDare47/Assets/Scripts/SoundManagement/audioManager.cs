@@ -5,10 +5,12 @@ using UnityEngine;
 public class audioManager : MonoBehaviour
 {
     private AudioSource audioSource;
+    private float vol = 0.22f;
 
     private void Awake()
     {
-        audioSource = GetComponent<AudioSource>();    
+        audioSource = GetComponent<AudioSource>();
+        audioSource.volume = vol;
     }
 
     public void playSound(AudioClip sound)
@@ -33,7 +35,7 @@ public class audioManager : MonoBehaviour
         else
         {
             audioSource.clip = sound;
-            audioSource.PlayOneShot(sound);
+            audioSource.PlayOneShot(sound, vol);
         }
     }
 
