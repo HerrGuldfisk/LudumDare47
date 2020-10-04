@@ -55,27 +55,45 @@ public class ShipController : MonoBehaviour
 
             if (gas.ReadValue<Vector2>().y > 0)
             {
-                audioManager.PlayOneshot(accSound);
+                //audioManager.PlayOneshot(accSound);
                 audioManager.playSound(accLoopSound);
             }
             else if (gas.ReadValue<Vector2>().y < 0)
             {
-                audioManager.PlayOneshot(breakSound);
+                //audioManager.PlayOneshot(breakSound);
                 audioManager.playSound(breakLoopSound);
             }
         }
 
         if (gas.ReadValue<Vector2>().y == 0)
         {
-            audioManager.stopPlaying(accSound);
-            audioManager.stopPlaying(accLoopSound);
-            audioManager.stopPlaying(breakSound);
-            audioManager.stopPlaying(breakLoopSound);
+            StopEngineSounds();
         }
     }
 
     public void CrashSound()
     {
+        StopEngineSounds();
         audioManager.PlayOneshot(crashSound);
+    }
+
+    public void EnterOrbitSound()
+    {
+        //StopEngineSounds();
+        audioManager.PlayOneshot(enterSound);
+    }
+
+    public void ExitOrbitSound()
+    {
+        //StopEngineSounds();
+        audioManager.PlayOneshot(exitSound);
+    }
+
+    public void StopEngineSounds()
+    {
+        audioManager.stopPlaying(accSound);
+        audioManager.stopPlaying(accLoopSound);
+        audioManager.stopPlaying(breakSound);
+        audioManager.stopPlaying(breakLoopSound);
     }
 }
