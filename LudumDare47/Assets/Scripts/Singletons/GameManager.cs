@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
 	private static bool destroyed;
 
 	public bool isRunning;
+	public bool dead;
 	public GameObject startScreen;
 
 	private void Awake()
@@ -31,6 +32,7 @@ public class GameManager : MonoBehaviour
 			_instance = this;
 		}
 
+		dead = false;
 		isRunning = false;
 	}
 
@@ -45,7 +47,7 @@ public class GameManager : MonoBehaviour
 
 	public void OnSpace(InputValue value)
 	{
-		if(!isRunning && value.Get<float>() == 1)
+		if(!isRunning && !dead && value.Get<float>() == 1)
 		{
 			isRunning = true;
 			startScreen.SetActive(false);
