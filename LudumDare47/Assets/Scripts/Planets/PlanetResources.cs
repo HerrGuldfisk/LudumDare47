@@ -42,6 +42,7 @@ public class PlanetResources : MonoBehaviour
             if (current > 0 && !shipResources.full)
             {
                 isSpawning = true;
+                collision.GetComponent<ShipController>().PlaySuckSound();
             }
         }
     }
@@ -51,6 +52,7 @@ public class PlanetResources : MonoBehaviour
         if (collision.CompareTag("Ship"))
         {
             isSpawning = false;
+            collision.GetComponent<ShipController>().StopSuckSound();
         }
     }
 

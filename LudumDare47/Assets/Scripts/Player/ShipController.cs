@@ -16,6 +16,7 @@ public class ShipController : MonoBehaviour
     [SerializeField] AudioClip enterSound;
     [SerializeField] AudioClip exitSound;
     [SerializeField] AudioClip crashSound;
+    [SerializeField] AudioClip suckSound;
 
     private Rigidbody2D rb;
     private FuelSystem fuelSystem;
@@ -95,5 +96,15 @@ public class ShipController : MonoBehaviour
         audioManager.stopPlaying(accLoopSound);
         audioManager.stopPlaying(breakSound);
         audioManager.stopPlaying(breakLoopSound);
+    }
+
+    public void PlaySuckSound()
+    {
+        audioManager.playSound(suckSound);
+    }
+
+    public void StopSuckSound()
+    {
+        audioManager.stopPlaying(suckSound);
     }
 }

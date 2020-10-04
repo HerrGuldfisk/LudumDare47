@@ -63,6 +63,7 @@ MonoBehaviour:
   enterSound: {fileID: 8300000, guid: 0bd2dae9570682f408b657e4f25a2931, type: 3}
   exitSound: {fileID: 8300000, guid: 1804a8a343e2d8945b2ec5bc9490bbf4, type: 3}
   crashSound: {fileID: 8300000, guid: 935cd084700d79041aee48f8a2812161, type: 3}
+  suckSound: {fileID: 8300000, guid: 73f20a6e11c43b641b76f9e9f1396729, type: 3}
   gas:
     m_Name: Gas
     m_Type: 0
