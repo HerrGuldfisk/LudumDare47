@@ -46,16 +46,20 @@ public class ShipController : MonoBehaviour
 	private void FixedUpdate()
     {
         var dir = rb.velocity.normalized;
-        Vector2 gasVector = gas.ReadValue<Vector2>();
-
         var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
-        if (gasVector != Vector2.zero)
+		if (!GameManager.Instance.isRunning)
+		{
+			return;
+		}
+
+		Vector2 gasVector = gas.ReadValue<Vector2>();
+
+		if (gasVector != Vector2.zero)
         {
             if (fuelSystem.fuelEmpty)
             {
-                Debug.Log("ship is turned off!");
                 gasVector.y = 0;
                 gasVector.x *= 0.1f;
             }
