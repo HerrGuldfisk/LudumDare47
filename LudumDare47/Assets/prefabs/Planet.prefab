@@ -210,7 +210,7 @@ Transform:
   m_GameObject: {fileID: 791940976}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 6, y: 6, z: 1}
   m_Children: []
   m_Father: {fileID: 5095512250395213366}
   m_RootOrder: 1
@@ -429,7 +429,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2.5
+  m_Radius: 3
 --- !u!114 &6304804121427187802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -661,7 +661,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 961682226090581944, guid: 95cfa296062505d40a13db5a588b5a06, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 3.224
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 961682226090581944, guid: 95cfa296062505d40a13db5a588b5a06, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -701,7 +701,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 961682226315880057, guid: 95cfa296062505d40a13db5a588b5a06, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 64.66
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 961682227126357612, guid: 95cfa296062505d40a13db5a588b5a06, type: 3}
       propertyPath: m_AnchorMax.x
