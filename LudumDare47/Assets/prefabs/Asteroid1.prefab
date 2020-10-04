@@ -198,6 +198,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Asteroid_01
       objectReference: {fileID: 0}
+    - target: {fileID: 9109602393826952555, guid: 110dc011d48fb154093094d4312c7312, type: 3}
+      propertyPath: m_TagString
+      value: Planet
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 110dc011d48fb154093094d4312c7312, type: 3}
 --- !u!4 &1722337310203540215 stripped

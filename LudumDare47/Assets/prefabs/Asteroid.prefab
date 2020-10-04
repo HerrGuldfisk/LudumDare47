@@ -244,6 +244,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ast2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7619828d664e7a845a2796b075700fcd, type: 3}
+      propertyPath: m_TagString
+      value: Planet
+      objectReference: {fileID: 0}
     - target: {fileID: 1151388028547126963, guid: 7619828d664e7a845a2796b075700fcd, type: 3}
       propertyPath: m_LocalScale.x
       value: 1

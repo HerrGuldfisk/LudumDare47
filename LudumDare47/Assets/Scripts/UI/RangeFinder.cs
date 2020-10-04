@@ -25,13 +25,12 @@ public class RangeFinder : MonoBehaviour
 	{
 		if (collision.gameObject.layer == LayerMask.NameToLayer("Planets"))
 		{
-			/*
-			if (collision.GetComponent<Renderer>().isVisible == false)
+			if (collision.GetComponentInParent<Renderer>().isVisible == false)
 			{
 
 			}
 
-			if (collision.GetComponent<Renderer>().isVisible == true)
+			if (collision.GetComponentInParent<Renderer>().isVisible == true)
 			{
 
 			}
@@ -41,8 +40,6 @@ public class RangeFinder : MonoBehaviour
 			float scaleFactor = Camera.main.orthographicSize;
 			Vector2 position = direction * scaleFactor;
 			Debug.Log(collision.name + " " + position);
-			*/
 		}
-
 	}
 }
