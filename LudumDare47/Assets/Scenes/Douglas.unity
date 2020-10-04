@@ -1708,10 +1708,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShipTest
       objectReference: {fileID: 0}
-    - target: {fileID: 1011510677133916729, guid: 06ba966c8ff8dc44d973ca096034ef95, type: 3}
-      propertyPath: accAmount
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 1011510677133916731, guid: 06ba966c8ff8dc44d973ca096034ef95, type: 3}
       propertyPath: m_LocalPosition.x
       value: -180.6
@@ -1754,10 +1750,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1011510677133916731, guid: 06ba966c8ff8dc44d973ca096034ef95, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2954539032443009359, guid: 06ba966c8ff8dc44d973ca096034ef95, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
