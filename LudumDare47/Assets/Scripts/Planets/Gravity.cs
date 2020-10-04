@@ -36,7 +36,7 @@ public class Gravity : MonoBehaviour
 			// ship.gravity = gravity;
 			// ship.gravityCenter = transform;
 			GameManager.inOrbit = true;
-			Debug.Log("Entering planet orbit " + collision.GetComponent<GravityController>().gravity);
+			//Debug.Log("Entering planet orbit " + collision.GetComponent<GravityController>().gravity);
 		}
 
 		if (collision.CompareTag("FuelRefill"))
