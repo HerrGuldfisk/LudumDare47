@@ -25,6 +25,14 @@ public class @MenuInput : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Quit"",
+                    ""type"": ""Button"",
+                    ""id"": ""8f3d5d5a-6ba5-4ae3-ae55-eb3252a2805c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -49,6 +57,17 @@ public class @MenuInput : IInputActionCollection, IDisposable
                     ""action"": ""Space"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""be733842-5d82-442c-8699-d2d7aababcd2"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Quit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -58,6 +77,7 @@ public class @MenuInput : IInputActionCollection, IDisposable
         // Inputs
         m_Inputs = asset.FindActionMap("Inputs", throwIfNotFound: true);
         m_Inputs_Space = m_Inputs.FindAction("Space", throwIfNotFound: true);
+        m_Inputs_Quit = m_Inputs.FindAction("Quit", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -108,11 +128,13 @@ public class @MenuInput : IInputActionCollection, IDisposable
     private readonly InputActionMap m_Inputs;
     private IInputsActions m_InputsActionsCallbackInterface;
     private readonly InputAction m_Inputs_Space;
+    private readonly InputAction m_Inputs_Quit;
     public struct InputsActions
     {
         private @MenuInput m_Wrapper;
         public InputsActions(@MenuInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Space => m_Wrapper.m_Inputs_Space;
+        public InputAction @Quit => m_Wrapper.m_Inputs_Quit;
         public InputActionMap Get() { return m_Wrapper.m_Inputs; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -125,6 +147,9 @@ public class @MenuInput : IInputActionCollection, IDisposable
                 @Space.started -= m_Wrapper.m_InputsActionsCallbackInterface.OnSpace;
                 @Space.performed -= m_Wrapper.m_InputsActionsCallbackInterface.OnSpace;
                 @Space.canceled -= m_Wrapper.m_InputsActionsCallbackInterface.OnSpace;
+                @Quit.started -= m_Wrapper.m_InputsActionsCallbackInterface.OnQuit;
+                @Quit.performed -= m_Wrapper.m_InputsActionsCallbackInterface.OnQuit;
+                @Quit.canceled -= m_Wrapper.m_InputsActionsCallbackInterface.OnQuit;
             }
             m_Wrapper.m_InputsActionsCallbackInterface = instance;
             if (instance != null)
@@ -132,6 +157,9 @@ public class @MenuInput : IInputActionCollection, IDisposable
                 @Space.started += instance.OnSpace;
                 @Space.performed += instance.OnSpace;
                 @Space.canceled += instance.OnSpace;
+                @Quit.started += instance.OnQuit;
+                @Quit.performed += instance.OnQuit;
+                @Quit.canceled += instance.OnQuit;
             }
         }
     }
@@ -139,5 +167,6 @@ public class @MenuInput : IInputActionCollection, IDisposable
     public interface IInputsActions
     {
         void OnSpace(InputAction.CallbackContext context);
+        void OnQuit(InputAction.CallbackContext context);
     }
 }

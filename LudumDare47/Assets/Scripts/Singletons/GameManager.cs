@@ -54,4 +54,9 @@ public class GameManager : MonoBehaviour
 			startScreen.SetActive(false);
 		}
 	}
+
+	public void OnQuit()
+	{
+		Application.Quit();
+	}
 }
