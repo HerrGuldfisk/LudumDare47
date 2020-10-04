@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class restartScene : MonoBehaviour
 {
@@ -10,4 +11,15 @@ public class restartScene : MonoBehaviour
 		GameManager.Instance.dead = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+	public void OnSpace()
+	{
+		if (GameManager.Instance.dead)
+		{
+			GameManager.Instance.dead = false;
+			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+			GameManager.Instance.isRunning = false;
+		}
+
+	}
 }

@@ -47,7 +47,8 @@ public class GameManager : MonoBehaviour
 
 	public void OnSpace(InputValue value)
 	{
-		if(!isRunning && !dead && value.Get<float>() == 1)
+		Debug.Log(value.Get<float>());
+		if( !dead && value.Get<float>() == 1)
 		{
 			isRunning = true;
 			startScreen.SetActive(false);
