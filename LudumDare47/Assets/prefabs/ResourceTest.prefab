@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6839506263126375839}
   - component: {fileID: 6839506263126375836}
   - component: {fileID: 518126161072150097}
-  - component: {fileID: 6839506263126375837}
   - component: {fileID: 6839506263126375838}
   - component: {fileID: 6839506263126375833}
   m_Layer: 0
@@ -101,21 +100,7 @@ MonoBehaviour:
   start: {fileID: 0}
   target: {fileID: 0}
   moveTime: 0
---- !u!114 &6839506263126375837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6839506263126375826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fa020e2b43ad124a8a0296465b1d2f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tag: Ship
-  speed: 60
-  moveAtSpawn: 1
+  moveAtStart: 0
 --- !u!58 &6839506263126375838
 CircleCollider2D:
   m_ObjectHideFlags: 0

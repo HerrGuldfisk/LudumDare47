@@ -5,7 +5,6 @@ using UnityEngine;
 public class Resource : MonoBehaviour
 {
     public Transform target;
-
     
     private void OnTriggerEnter2D(Collider2D collision)
     {

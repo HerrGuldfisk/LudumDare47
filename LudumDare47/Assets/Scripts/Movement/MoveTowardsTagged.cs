@@ -7,6 +7,7 @@ public class MoveTowardsTagged : MonoBehaviour
     [SerializeField] string tag;
     [SerializeField] float speed;
     [SerializeField] bool moveAtSpawn;
+    [SerializeField] float acc = 1;
     private Transform target;
     private bool isMoving = false;
 
@@ -21,8 +22,12 @@ public class MoveTowardsTagged : MonoBehaviour
 
     private void Update()
     {
-        Vector3 dir = (target.position - transform.position).normalized;
-        transform.position += dir * speed * Time.deltaTime;
+        if (isMoving)
+        {
+            speed += acc * Time.deltaTime;
+            Vector3 dir = (target.position - transform.position).normalized;
+            transform.position += dir * speed * Time.deltaTime;
+        }
     }
 
     public void startMoving(Transform moveTarget)
