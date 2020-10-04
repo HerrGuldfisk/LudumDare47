@@ -62,7 +62,6 @@ public class Gravity : MonoBehaviour
 			ship.gravity = 0;
 			Camera.main.GetComponent<CameraFollow>().followTarget = collision.gameObject;
 			GameManager.inOrbit = false;
-			Debug.Log("Leaving planet orbit " + collision.GetComponent<GravityController>().gravity);
 		}
 
 		if (collision.CompareTag("FuelRefill"))

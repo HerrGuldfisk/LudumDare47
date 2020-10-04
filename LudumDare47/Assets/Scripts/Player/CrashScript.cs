@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class CrashScript : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Planet"))
-        {
-            GameManager.PlayerDeath();
-            GetComponent<Death>().PlayerDeath("THE SHIP WAS OBLITERATED");
-        }
-    }
+
+	private void OnCollisionEnter2D(Collision2D collision)
+	{
+		if (collision.gameObject.CompareTag("Planet"))
+		{
+			GameManager.PlayerDeath();
+			GetComponent<Death>().PlayerDeath("THE SHIP WAS OBLITERATED");
+		}
+	}
 }
