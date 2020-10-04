@@ -98,8 +98,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tag: Ship
-  speed: 60
+  speed: 50
   moveAtSpawn: 1
+  acc: 80
 --- !u!58 &6839506263126375838
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -128,3 +129,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21ccede067a37924cbae23822a495da6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}

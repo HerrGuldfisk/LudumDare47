@@ -55,7 +55,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startSpeed: 25
   accAmount: 20
-  fuelCost: 5
+  fuelCostGas: 8
+  fuelCostTurn: 4
   accSound: {fileID: 8300000, guid: 0cafdf9db38e9d3439fd5d9ec79353d3, type: 3}
   breakSound: {fileID: 8300000, guid: b4d0619f697268c459b415cf8ee91240, type: 3}
   accLoopSound: {fileID: 8300000, guid: 2d671dac4b9991d45bfafb380e8e04e7, type: 3}
@@ -202,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80dc43e529e14c04da56636f240fc87a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standbyDepletion: 1
+  standbyDepletion: 0
 --- !u!114 &1227987621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,7 +260,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6264475525878242464
 Transform:
   m_ObjectHideFlags: 0

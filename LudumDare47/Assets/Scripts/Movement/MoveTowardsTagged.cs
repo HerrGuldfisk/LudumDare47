@@ -7,7 +7,7 @@ public class MoveTowardsTagged : MonoBehaviour
     [SerializeField] string tag;
     [SerializeField] float speed;
     [SerializeField] bool moveAtSpawn;
-    [SerializeField] float acc = 1;
+    [SerializeField] float acc = 30;
     private Transform target;
     private bool isMoving = false;
 
