@@ -32,7 +32,7 @@ public class EmitDebris : MonoBehaviour
 
         for (int i = 0; i < numFuel; i++)
         {
-            randomRadius = Random.Range(radius * 2f, radius * 4f);
+            randomRadius = Random.Range(radius * 4f, radius * 8f);
 
             float angle = i * Mathf.PI * 2 / numFuel;
             float x = Mathf.Cos(angle) * randomRadius;

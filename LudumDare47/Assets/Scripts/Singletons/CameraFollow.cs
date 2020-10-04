@@ -8,7 +8,7 @@ public class CameraFollow : MonoBehaviour
 
 	private float smoothSpeed = 0.08f;
 	private float planetZoom = 50f;
-	private float shipZoom = 150f;
+	private float shipZoom = 120f;
 	private float zoomGoal;
 	private float currentZoom = 20f;
 

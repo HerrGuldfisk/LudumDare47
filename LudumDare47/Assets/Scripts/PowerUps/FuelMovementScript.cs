@@ -13,7 +13,7 @@ public class FuelMovementScript : MonoBehaviour
     private Transform rotationCenter = null;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         startSpeed = Random.Range(1.5f, 3f);
         startDir = Random.insideUnitCircle.normalized;
@@ -25,8 +25,12 @@ public class FuelMovementScript : MonoBehaviour
 
     public void EnterOrbit(Transform rc)
     {
-        rotationCenter = rc;
-        inOrbit = true;
+		if(!inOrbit)
+		{
+			rotationCenter = rc;
+			inOrbit = true;
+		}
+
     }
 
     public void ExitOrbit()
@@ -50,7 +54,7 @@ public class FuelMovementScript : MonoBehaviour
             }
             */
 
-            transform.RotateAround(rotationCenter.position, new Vector3(0, 0, 1), rb.velocity.magnitude * 2f * Time.deltaTime);
+            transform.RotateAround(rotationCenter.position, new Vector3(0, 0, 1), rb.velocity.magnitude * 10f * Time.deltaTime);
         }
     }
 }

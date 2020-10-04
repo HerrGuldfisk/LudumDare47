@@ -45,15 +45,8 @@ public class Gravity : MonoBehaviour
 		}
 	}
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-		if (collision.CompareTag("FuelRefill"))
-		{
-			collision.GetComponent<FuelMovementScript>().EnterOrbit(transform);
-		}
-	}
 
-    private void OnTriggerExit2D(Collider2D collision)
+	private void OnTriggerExit2D(Collider2D collision)
 	{
 		if (collision.CompareTag("Ship"))
 		{
