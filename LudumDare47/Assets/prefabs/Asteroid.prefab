@@ -138,6 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 0.05
+  rotationCenter: {fileID: 0}
   randomSpeed: 0
 --- !u!50 &3636242878423104456
 Rigidbody2D:
@@ -240,6 +241,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 7619828d664e7a845a2796b075700fcd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cfa6c223b8ca8494a914b95a6f4009ec, type: 2}
     - target: {fileID: 919132149155446097, guid: 7619828d664e7a845a2796b075700fcd, type: 3}
       propertyPath: m_Name
       value: ast2
