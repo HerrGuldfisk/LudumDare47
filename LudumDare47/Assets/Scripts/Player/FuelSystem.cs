@@ -7,12 +7,14 @@ public class FuelSystem : MonoBehaviour
 {
     [SerializeField] float standbyDepletion = 1;
     private Slider fuelSlider;
-    private bool shipTurnedOff = false;
+    private Text screenText;
+    public bool fuelEmpty = false;
 
     private void Awake()
     {
         GameManager.currentFuel = GameManager.maxFuel;
         fuelSlider = GameObject.FindGameObjectWithTag("fuelBar").transform.GetComponent<Slider>();
+        screenText = GameObject.FindGameObjectWithTag("ScreenMessage").GetComponent<Text>();
     }
 
     void Update()
@@ -24,11 +26,8 @@ public class FuelSystem : MonoBehaviour
         
         updateSlider();
 
-        if (!shipTurnedOff && GameManager.currentFuel < 0)
+        if (!fuelEmpty && GameManager.currentFuel < 0)
         {
-            shipTurnedOff = true;
-            GetComponent<ShipController>().gas.Disable();
-            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             FuelIsEmpty();
         }
     }
@@ -38,6 +37,14 @@ public class FuelSystem : MonoBehaviour
         GameManager.currentFuel -= amount;
     }
 
+    public void addFuel(float amount)
+    {
+        GameManager.currentFuel += amount;
+        GameManager.currentFuel = Mathf.Clamp(GameManager.currentFuel, 0, GameManager.maxFuel);
+        fuelEmpty = false;
+        screenText.enabled = false;
+    }
+
     private void updateSlider()
     {
         fuelSlider.value = GameManager.currentFuel / GameManager.maxFuel;
@@ -45,7 +52,10 @@ public class FuelSystem : MonoBehaviour
 
     private void FuelIsEmpty()
     {
-        GameManager.PlayerDeath();
-        GetComponent<Death>().PlayerDeath("Out of fuel...");
+        fuelEmpty = true;
+
+        screenText.enabled = true;
+        screenText.text = "Out of fuel";
+        screenText.color = Color.red;
     }
 }

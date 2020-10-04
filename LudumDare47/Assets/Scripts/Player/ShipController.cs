@@ -43,55 +43,33 @@ public class ShipController : MonoBehaviour
         audioManager = GameObject.FindGameObjectWithTag("AudioController").transform.GetComponent<audioManager>();
     }
 
-	private void Start()
-	{
-
-	}
-
 	private void FixedUpdate()
     {
         var dir = rb.velocity.normalized;
+        Vector2 gasVector = gas.ReadValue<Vector2>();
 
-		var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
-		if ( GameManager.Instance.isRunning == true)
-		{
-			if (gas.ReadValue<Vector2>() != Vector2.zero)
-			{
-				rb.AddForce(rb.velocity.normalized * gas.ReadValue<Vector2>().y * accAmount);
-				rb.AddForce(new Vector2(rb.velocity.normalized.y , -rb.velocity.normalized.x) * gas.ReadValue<Vector2>().x * accAmount * 4f);
-				fuelSystem.DepleteFuel(fuelCost*Time.deltaTime);
-
-				if (gas.ReadValue<Vector2>().y > 0)
-				{
-					//audioManager.PlayOneshot(accSound);
-					audioManager.playSound(accLoopSound);
-				}
-				else if (gas.ReadValue<Vector2>().y < 0)
-				{
-					//audioManager.PlayOneshot(breakSound);
-					audioManager.playSound(breakLoopSound);
-				}
-			}
-		}
-
-        if (gas.ReadValue<Vector2>() != Vector2.zero)
+        if (gasVector != Vector2.zero)
         {
-            Vector2 gasVector = gas.ReadValue<Vector2>();
-            Vector2 directon = rb.velocity.normalized;
-            rb.AddForce(directon * gasVector.y * accAmount);
-            rb.AddForce(new Vector2(directon.y , -directon.x) * gasVector.x * accAmount * 4f);
+            if (fuelSystem.fuelEmpty)
+            {
+                Debug.Log("ship is turned off!");
+                gasVector.y = 0;
+                gasVector.x *= 0.1f;
+            }
+
+            rb.AddForce(dir * gasVector.y * accAmount);
+            rb.AddForce(new Vector2(dir.y , -dir.x) * gasVector.x * accAmount * 4f);
             fuelSystem.DepleteFuel((Mathf.Abs(gasVector.y)*fuelCostGas  + Mathf.Abs(gasVector.x)*fuelCostTurn)*Time.deltaTime);
 
             if (gas.ReadValue<Vector2>().y > 0)
             {
-                //audioManager.PlayOneshot(accSound);
                 audioManager.playSound(accLoopSound);
             }
             else if (gas.ReadValue<Vector2>().y < 0)
             {
-                //audioManager.PlayOneshot(breakSound);
                 audioManager.playSound(breakLoopSound);
             }
         }
@@ -110,13 +88,11 @@ public class ShipController : MonoBehaviour
 
     public void EnterOrbitSound()
     {
-        //StopEngineSounds();
         audioManager.PlayOneshot(enterSound);
     }
 
     public void ExitOrbitSound()
     {
-        //StopEngineSounds();
         audioManager.PlayOneshot(exitSound);
     }
 
