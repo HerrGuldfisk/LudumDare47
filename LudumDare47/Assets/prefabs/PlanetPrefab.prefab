@@ -176,6 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   atmoObject: {fileID: 791940976}
+  atmoRenderer: {fileID: 791940978}
   materials:
   - {fileID: 2100000, guid: cfa6c223b8ca8494a914b95a6f4009ec, type: 2}
   - {fileID: 2100000, guid: 21b0fb31e400a95439458e3fcab58aab, type: 2}
@@ -185,7 +186,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 6f32b8de53ac2ef4f8defce8e1d08855, type: 2}
   - {fileID: 2100000, guid: 9520fcf4a24d0f548b164e937b77d618, type: 2}
   - {fileID: 2100000, guid: 1d9d9de5ad117a04c9f74313f6b3071e, type: 2}
-  renderer: {fileID: 2537943923804714031}
+  planetRenderer: {fileID: 2537943923804714031}
 --- !u!1001 &674250358124517307
 PrefabInstance:
   m_ObjectHideFlags: 0
