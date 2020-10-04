@@ -45,8 +45,8 @@ public class CameraFollow : MonoBehaviour
 
 	void MoveTowards(Transform target)
 	{
-		Vector3 desiredPosition = new Vector3(target.position.x, target.position.y, -100);
-		Vector3 smoothedPosition = Vector3.Lerp(new Vector3(transform.position.x, transform.position.y, -100), desiredPosition, smoothSpeed);
+		Vector3 desiredPosition = new Vector3(target.position.x, target.position.y, -900);
+		Vector3 smoothedPosition = Vector3.Lerp(new Vector3(transform.position.x, transform.position.y, -900), desiredPosition, smoothSpeed);
 		transform.position = smoothedPosition;
 	}
 }

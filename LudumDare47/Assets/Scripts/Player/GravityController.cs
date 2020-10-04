@@ -12,7 +12,7 @@ public class GravityController : MonoBehaviour
     {
 		if (gravity != 0 && gravityCenter != null)
 		{
-			Vector2 gravityVector = gravity * Time.deltaTime * (gravityCenter.position - transform.position);
+			Vector2 gravityVector = gravity * (gravityCenter.position - transform.position).normalized * Time.deltaTime;
 			GetComponent<Rigidbody2D>().velocity += gravityVector;
 		}
     }
