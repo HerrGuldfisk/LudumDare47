@@ -4,17 +4,28 @@ using UnityEngine;
 
 public class rotateTowardsTagged : MonoBehaviour
 {
-    [SerializeField] string tag;
-    private Transform objectTransform;
+    [SerializeField] string targetTag;
+    [SerializeField] Transform targetTrans;
+    private Transform target;
 
     private void Awake() {
-        objectTransform = GameObject.FindGameObjectWithTag(tag).transform;
+        if (targetTag != "")
+        {
+            target = GameObject.FindGameObjectWithTag(targetTag).transform;
+        }
+        else if (targetTrans)
+        {
+            target = targetTrans;
+        }
     }
 
     void Update()
     {
-        Vector3 dir = objectTransform.position - transform.position;
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        if (target)
+        {
+            Vector3 dir = target.position - transform.position;
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        }
     }
 }
