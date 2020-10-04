@@ -6,13 +6,17 @@ public class RangeFinder : MonoBehaviour
 {
 	CircleCollider2D searchRange;
 	public float searchRadius;
-	GameObject[] planets;
+	List<GameObject> planets;
+
+	public GameObject arrow;
+	Camera cam;
 
     // Start is called before the first frame update
     void Start()
     {
 		searchRange = GetComponent<CircleCollider2D>();
 		searchRange.radius = searchRadius;
+		cam = Camera.main;
     }
 
     // Update is called once per frame
@@ -21,25 +25,56 @@ public class RangeFinder : MonoBehaviour
 
     }
 
-	private void OnTriggerStay2D(Collider2D collision)
+	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (collision.gameObject.layer == LayerMask.NameToLayer("Planets"))
 		{
-			if (collision.GetComponentInParent<Renderer>().isVisible == false)
+			GameObject locator = Instantiate(arrow);
+			planets.Add(locator);
+			foreach(GameObject planet in planets)
 			{
-
+				Debug.Log(planet.name);
 			}
 
-			if (collision.GetComponentInParent<Renderer>().isVisible == true)
-			{
-
-			}
-			Transform planet = collision.transform;
-			Vector2 direction = planet.position - transform.position;
-			direction = direction.normalized;
-			float scaleFactor = Camera.main.orthographicSize;
-			Vector2 position = direction * scaleFactor;
-			Debug.Log(collision.name + " " + position);
 		}
+	}
+
+	private void OnTriggerStay2D(Collider2D collision)
+	{
+		Transform shipLocation;
+		shipLocation = FindObjectOfType<ShipController>().transform;
+		Vector2 localShipPos;
+		localShipPos = Camera.main.WorldToViewportPoint(shipLocation.position);
+
+		Vector3 planet = collision.transform.position;
+
+		Vector2 planetScreenPos = cam.WorldToViewportPoint(planet);
+		if (planetScreenPos.x >= 0 && planetScreenPos.x <= 1 && planetScreenPos.y >= 0 && planetScreenPos.y <= 1)
+		{
+			return;
+		}
+
+		Vector2 arrowVector = planetScreenPos - localShipPos;
+
+
+		/*
+		Vector2 planetLocation = transform.position - planet;
+
+
+		Vector2 direction =
+			if (direction.magnitude >= Camera.main.orthographicSize)
+			{
+				direction = direction.normalized;
+				float scaleFactor = Camera.main.orthographicSize / 2;
+				Vector2 position = direction * scaleFactor;
+				Debug.Log(collision.name + " " + position);
+			}
+
+		}*/
+	}
+
+	private void OnTriggerExit2D(Collider2D collision)
+	{
+
 	}
 }
