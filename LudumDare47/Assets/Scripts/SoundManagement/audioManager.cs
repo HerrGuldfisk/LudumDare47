@@ -24,6 +24,19 @@ public class audioManager : MonoBehaviour
         }
     }
 
+    public void PlayOneshot(AudioClip sound)
+    {
+        if (audioSource.isPlaying && audioSource.clip == sound)
+        {
+            return;
+        }
+        else
+        {
+            audioSource.clip = sound;
+            audioSource.PlayOneShot(sound);
+        }
+    }
+
     public void stopPlaying(AudioClip sound)
     {
         if (audioSource.isPlaying && audioSource.clip == sound)

@@ -11,6 +11,11 @@ public class ShipController : MonoBehaviour
 
     [SerializeField] AudioClip accSound;
     [SerializeField] AudioClip breakSound;
+    [SerializeField] AudioClip accLoopSound;
+    [SerializeField] AudioClip breakLoopSound;
+    [SerializeField] AudioClip enterSound;
+    [SerializeField] AudioClip exitSound;
+    [SerializeField] AudioClip crashSound;
 
     private Rigidbody2D rb;
     private FuelSystem fuelSystem;
@@ -50,19 +55,27 @@ public class ShipController : MonoBehaviour
 
             if (gas.ReadValue<Vector2>().y > 0)
             {
-                audioManager.playSound(accSound);
+                audioManager.PlayOneshot(accSound);
+                audioManager.playSound(accLoopSound);
             }
             else if (gas.ReadValue<Vector2>().y < 0)
             {
-                audioManager.playSound(breakSound);
+                audioManager.PlayOneshot(breakSound);
+                audioManager.playSound(breakLoopSound);
             }
         }
 
         if (gas.ReadValue<Vector2>().y == 0)
         {
             audioManager.stopPlaying(accSound);
+            audioManager.stopPlaying(accLoopSound);
             audioManager.stopPlaying(breakSound);
+            audioManager.stopPlaying(breakLoopSound);
         }
     }
 
+    public void CrashSound()
+    {
+        audioManager.PlayOneshot(crashSound);
+    }
 }

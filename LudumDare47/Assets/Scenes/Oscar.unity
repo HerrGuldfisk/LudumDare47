@@ -234,7 +234,7 @@ PrefabInstance:
     - target: {fileID: 8110597092779052273, guid: 79ab327258c442b4ead20c583db150f8, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 5a9789227d2c8b14da1db2b578840541, type: 3}
+      objectReference: {fileID: 8300000, guid: a3b699140736bbc4ca8217ae38b4f08e, type: 3}
     - target: {fileID: 8110597092779052275, guid: 79ab327258c442b4ead20c583db150f8, type: 3}
       propertyPath: m_Name
       value: Music Controller
@@ -979,6 +979,10 @@ PrefabInstance:
       propertyPath: accAmount
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1011510677133916729, guid: 06ba966c8ff8dc44d973ca096034ef95, type: 3}
+      propertyPath: crashSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 935cd084700d79041aee48f8a2812161, type: 3}
     - target: {fileID: 1011510677133916731, guid: 06ba966c8ff8dc44d973ca096034ef95, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.148
