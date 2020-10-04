@@ -194,7 +194,7 @@ GameObject:
   - component: {fileID: 134493003}
   - component: {fileID: 134493004}
   m_Layer: 0
-  m_Name: Resource (1)
+  m_Name: Resource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
