@@ -11,6 +11,7 @@ public class CrashScript : MonoBehaviour
 		{
 			GameManager.PlayerDeath();
 			GameManager.Instance.isRunning = false;
+			GameManager.Instance.dead = true;
 			GetComponent<ShipController>().CrashSound();
 			GetComponent<Death>().PlayerDeath("THE SHIP WAS OBLITERATED");
 		}
