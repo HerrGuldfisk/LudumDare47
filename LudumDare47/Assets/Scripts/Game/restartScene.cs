@@ -7,7 +7,7 @@ public class restartScene : MonoBehaviour
 {
     public void restartGame()
     {
-
+		GameManager.Instance.dead = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
