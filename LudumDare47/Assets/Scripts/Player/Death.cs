@@ -6,17 +6,19 @@ using UnityEngine.UI;
 public class Death : MonoBehaviour
 {
     private GameObject crashmenu;
+    private CanvasGroup canvasGroup;
 
     private void Awake()
     {
         crashmenu = GameObject.FindGameObjectWithTag("CrashMenu");
-        crashmenu.SetActive(false);
+        canvasGroup = crashmenu.GetComponent<CanvasGroup>();
+        canvasGroup.alpha = 0;
     }
 
     public void PlayerDeath(string deathText)
     {
-        crashmenu.SetActive(true);
-        GameObject.FindGameObjectWithTag("CrashText").GetComponent<Text>().text = deathText;
+        canvasGroup.alpha = 1;
+        crashmenu.GetComponentInChildren<Text>().text = deathText;
         gameObject.SetActive(false);
     }
 }

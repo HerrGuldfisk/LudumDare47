@@ -15,7 +15,8 @@ public class EarthResources : MonoBehaviour
     private shipResources shipResources;
     private Slider slider;
     private Text text;
-    public GameObject crashmenu;
+    private GameObject crashmenu;
+    private CanvasGroup canvasGroup;
 
 
     private void Awake()
@@ -24,7 +25,10 @@ public class EarthResources : MonoBehaviour
         isSpawning = false;
         slider = GetComponentInChildren<Slider>();
         text = GetComponentInChildren<Text>();
+
         crashmenu = GameObject.FindGameObjectWithTag("CrashMenu");
+        canvasGroup = crashmenu.GetComponent<CanvasGroup>();
+
         updateSlider();
     }
 
@@ -97,7 +101,7 @@ public class EarthResources : MonoBehaviour
 
     private void win()
     {
-        crashmenu.SetActive(true);
+        canvasGroup.alpha = 1;
         crashmenu.GetComponentInChildren<Text>().text = "THE EARTH WAS SAVED!!!";
         shipResources.gameObject.SetActive(false);
     }
