@@ -15,7 +15,7 @@ public class FuelMovementScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startSpeed = Random.Range(2f, 4f);
+        startSpeed = Random.Range(1.5f, 3f);
         startDir = Random.insideUnitCircle.normalized;
 
         rb = GetComponent<Rigidbody2D>();
@@ -50,7 +50,7 @@ public class FuelMovementScript : MonoBehaviour
             }
             */
 
-            transform.RotateAround(rotationCenter.position, new Vector3(0, 0, 1), startSpeed * Time.deltaTime);
+            transform.RotateAround(rotationCenter.position, new Vector3(0, 0, 1), rb.velocity.magnitude * 2f * Time.deltaTime);
         }
     }
 }

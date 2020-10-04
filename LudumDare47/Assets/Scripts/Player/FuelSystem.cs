@@ -8,7 +8,7 @@ public class FuelSystem : MonoBehaviour
     [SerializeField] float standbyDepletion = 1;
     private Slider fuelSlider;
     private bool shipTurnedOff = false;
-    private bool inOrbit = false;
+
     private void Awake()
     {
         GameManager.currentFuel = GameManager.maxFuel;
@@ -17,7 +17,7 @@ public class FuelSystem : MonoBehaviour
 
     void Update()
     {
-        if (inOrbit)
+        if (GameManager.inOrbit)
         {
             GameManager.currentFuel -= standbyDepletion * Time.deltaTime;
         }
