@@ -8,7 +8,8 @@ public class ShipController : MonoBehaviour
     [SerializeField] float startSpeed = 2;
 	[SerializeField] float accAmount = 4;
     [SerializeField] float fuelCostGas = 5;
-    [SerializeField] float fuelCostTurn = 2;
+	[SerializeField] float fuelCost = 5;
+	[SerializeField] float fuelCostTurn = 2;
 
     [SerializeField] AudioClip accSound;
     [SerializeField] AudioClip breakSound;
@@ -54,7 +55,6 @@ public class ShipController : MonoBehaviour
 		var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
-<<<<<<< HEAD
 		if ( GameManager.Instance.isRunning == true)
 		{
 			if (gas.ReadValue<Vector2>() != Vector2.zero)
@@ -75,7 +75,7 @@ public class ShipController : MonoBehaviour
 				}
 			}
 		}
-=======
+
         if (gas.ReadValue<Vector2>() != Vector2.zero)
         {
             Vector2 gasVector = gas.ReadValue<Vector2>();
@@ -95,7 +95,6 @@ public class ShipController : MonoBehaviour
                 audioManager.playSound(breakLoopSound);
             }
         }
->>>>>>> d876bc61f3d13e9e688774ffe721a4576f57d662
 
         if (gas.ReadValue<Vector2>().y == 0)
         {
