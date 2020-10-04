@@ -10,6 +10,7 @@ public class CrashScript : MonoBehaviour
 		if (collision.gameObject.CompareTag("Planet"))
 		{
 			GameManager.PlayerDeath();
+			GameManager.Instance.isRunning = false;
 			GetComponent<ShipController>().CrashSound();
 			GetComponent<Death>().PlayerDeath("THE SHIP WAS OBLITERATED");
 		}

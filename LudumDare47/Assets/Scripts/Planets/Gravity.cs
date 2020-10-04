@@ -34,6 +34,7 @@ public class Gravity : MonoBehaviour
 			collision.GetComponent<GravityController>().inAtmosphere = true;
 			collision.GetComponent<ShipController>().EnterOrbitSound();
 			Camera.main.GetComponent<CameraFollow>().followTarget = gameObject;
+			Camera.main.GetComponent<CameraFollow>().planetZoom = transform.localScale.x * GetComponent<CircleCollider2D>().radius * 1.25f;
 			// ship.gravity = gravity;
 			// ship.gravityCenter = transform;
 			GameManager.inOrbit = true;
