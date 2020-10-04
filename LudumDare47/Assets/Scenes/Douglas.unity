@@ -193,6 +193,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 726415265477113026, guid: 1d09644ddea6582498a86d1d76bf9147, type: 3}
   m_PrefabInstance: {fileID: 707247252}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &75314524 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4773715736488184597, guid: 06ba966c8ff8dc44d973ca096034ef95, type: 3}
+  m_PrefabInstance: {fileID: 1332474552}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &145855378
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1813,6 +1818,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 191901867275335491, guid: 06ba966c8ff8dc44d973ca096034ef95, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1011510677133916726, guid: 06ba966c8ff8dc44d973ca096034ef95, type: 3}
       propertyPath: m_Name
       value: ShipTest
@@ -1825,6 +1834,10 @@ PrefabInstance:
       propertyPath: startSpeed
       value: 35
       objectReference: {fileID: 0}
+    - target: {fileID: 1011510677133916729, guid: 06ba966c8ff8dc44d973ca096034ef95, type: 3}
+      propertyPath: flameSprite
+      value: 
+      objectReference: {fileID: 75314524}
     - target: {fileID: 1011510677133916731, guid: 06ba966c8ff8dc44d973ca096034ef95, type: 3}
       propertyPath: m_LocalPosition.x
       value: -180.6
@@ -1872,6 +1885,14 @@ PrefabInstance:
     - target: {fileID: 2954539032443009359, guid: 06ba966c8ff8dc44d973ca096034ef95, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6264475525878242464, guid: 06ba966c8ff8dc44d973ca096034ef95, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8928469490530468924, guid: 06ba966c8ff8dc44d973ca096034ef95, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06ba966c8ff8dc44d973ca096034ef95, type: 3}

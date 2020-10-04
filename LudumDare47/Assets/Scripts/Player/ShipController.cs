@@ -10,6 +10,7 @@ public class ShipController : MonoBehaviour
     [SerializeField] float fuelCostGas = 5;
 	[SerializeField] float fuelCost = 5;
 	[SerializeField] float fuelCostTurn = 2;
+    [SerializeField] SpriteRenderer flameSprite; 
 
     [SerializeField] AudioClip accSound;
     [SerializeField] AudioClip breakSound;
@@ -41,6 +42,7 @@ public class ShipController : MonoBehaviour
         fuelSystem = GetComponent<FuelSystem>();
         rb.velocity = new Vector2(startSpeed, 0);
         audioManager = GameObject.FindGameObjectWithTag("AudioController").transform.GetComponent<audioManager>();
+        flameSprite.enabled = false;
     }
 
 	private void FixedUpdate()
@@ -71,10 +73,16 @@ public class ShipController : MonoBehaviour
             if (gas.ReadValue<Vector2>().y > 0)
             {
                 audioManager.playSound(accLoopSound);
+                flameSprite.enabled = true;
             }
             else if (gas.ReadValue<Vector2>().y < 0)
             {
                 audioManager.playSound(breakLoopSound);
+                flameSprite.enabled = false;
+            }
+            else
+            {
+                flameSprite.enabled = false;
             }
         }
 
