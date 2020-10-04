@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
 		isRunning = false;
 	}
 
+
 	public static void PlayerDeath()
 	{
 		if (!destroyed)

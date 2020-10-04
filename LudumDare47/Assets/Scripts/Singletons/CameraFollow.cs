@@ -6,8 +6,8 @@ public class CameraFollow : MonoBehaviour
 {
 	public GameObject followTarget;
 
-	private float smoothSpeed = 0.04f;
-	private float planetZoom = 50f;
+	private float smoothSpeed = 0.035f;
+	public float planetZoom = 50f;
 	private float shipZoom = 120f;
 	private float zoomGoal;
 	private float currentZoom = 50f;
@@ -26,6 +26,11 @@ public class CameraFollow : MonoBehaviour
 
 	void ZoomLevel()
 	{
+		if (!GameManager.Instance.isRunning)
+		{
+			return;
+		}
+
 		if (followTarget.CompareTag("Ship"))
 		{
 			zoomGoal = shipZoom;
