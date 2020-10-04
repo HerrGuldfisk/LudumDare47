@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 5095512250395213366}
   - component: {fileID: 5095512250395213365}
   - component: {fileID: 5095512250395213367}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Planet
   m_TagString: Orbit
   m_Icon: {fileID: 0}
