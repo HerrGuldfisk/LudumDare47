@@ -6,7 +6,7 @@ public class Rotation : MonoBehaviour
 {
 
 	private float startRotation;
-	public float rotationSpeed  = 8f;
+	public float rotationSpeed  = 14f;
 
 	public Transform rotationCenter;
 
@@ -16,6 +16,7 @@ public class Rotation : MonoBehaviour
     {
 		startRotation = Random.Range(0f, 360f);
 		transform.Rotate(0, 0, startRotation);
+		randomSpeed = true;
 
 		if (randomSpeed)
 		{

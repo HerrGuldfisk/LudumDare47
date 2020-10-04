@@ -41,30 +41,38 @@ public class ShipController : MonoBehaviour
         audioManager = GameObject.FindGameObjectWithTag("AudioController").transform.GetComponent<audioManager>();
     }
 
-    private void FixedUpdate()
+	private void Start()
+	{
+
+	}
+
+	private void FixedUpdate()
     {
         var dir = rb.velocity.normalized;
 
 		var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
-        if (gas.ReadValue<Vector2>() != Vector2.zero)
-        {
-            rb.AddForce(rb.velocity.normalized * gas.ReadValue<Vector2>().y * accAmount);
-            rb.AddForce(new Vector2(rb.velocity.normalized.y , -rb.velocity.normalized.x) * gas.ReadValue<Vector2>().x * accAmount * 4f);
-            fuelSystem.DepleteFuel(fuelCost*Time.deltaTime);
+		if ( GameManager.Instance.isRunning == true)
+		{
+			if (gas.ReadValue<Vector2>() != Vector2.zero)
+			{
+				rb.AddForce(rb.velocity.normalized * gas.ReadValue<Vector2>().y * accAmount);
+				rb.AddForce(new Vector2(rb.velocity.normalized.y , -rb.velocity.normalized.x) * gas.ReadValue<Vector2>().x * accAmount * 4f);
+				fuelSystem.DepleteFuel(fuelCost*Time.deltaTime);
 
-            if (gas.ReadValue<Vector2>().y > 0)
-            {
-                //audioManager.PlayOneshot(accSound);
-                audioManager.playSound(accLoopSound);
-            }
-            else if (gas.ReadValue<Vector2>().y < 0)
-            {
-                //audioManager.PlayOneshot(breakSound);
-                audioManager.playSound(breakLoopSound);
-            }
-        }
+				if (gas.ReadValue<Vector2>().y > 0)
+				{
+					//audioManager.PlayOneshot(accSound);
+					audioManager.playSound(accLoopSound);
+				}
+				else if (gas.ReadValue<Vector2>().y < 0)
+				{
+					//audioManager.PlayOneshot(breakSound);
+					audioManager.playSound(breakLoopSound);
+				}
+			}
+		}
 
         if (gas.ReadValue<Vector2>().y == 0)
         {

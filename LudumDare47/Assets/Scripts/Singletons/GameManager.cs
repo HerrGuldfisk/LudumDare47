@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class GameManager : MonoBehaviour
 	public static bool inOrbit;
 	private static bool destroyed;
 
+	public bool isRunning;
+	public GameObject startScreen;
+
 	private void Awake()
 	{
 		DontDestroyOnLoad(gameObject);
@@ -26,6 +30,8 @@ public class GameManager : MonoBehaviour
 		{
 			_instance = this;
 		}
+
+		isRunning = false;
 	}
 
 	public static void PlayerDeath()
@@ -34,5 +40,14 @@ public class GameManager : MonoBehaviour
 		{
 			destroyed = true;
 		}
-	}	
+	}
+
+	public void OnSpace(InputValue value)
+	{
+		if(!isRunning && value.Get<float>() == 1)
+		{
+			isRunning = true;
+			startScreen.SetActive(false);
+		}
+	}
 }

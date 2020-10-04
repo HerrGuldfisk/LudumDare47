@@ -6,15 +6,20 @@ public class CameraFollow : MonoBehaviour
 {
 	public GameObject followTarget;
 
-	private float smoothSpeed = 0.08f;
+	private float smoothSpeed = 0.04f;
 	private float planetZoom = 50f;
 	private float shipZoom = 120f;
 	private float zoomGoal;
-	private float currentZoom = 20f;
+	private float currentZoom = 50f;
 
 	// Update is called once per frame
 	void FixedUpdate()
 	{
+		if (!GameManager.Instance.isRunning)
+		{
+			return;
+		}
+
 		ZoomLevel();
 		MoveTowards(followTarget.transform);
 	}

@@ -1,0 +1,44 @@
+{
+    "name": "MenuInput",
+    "maps": [
+        {
+            "name": "Inputs",
+            "id": "f923d9f5-3f60-43b6-8e96-5a1a06a5475b",
+            "actions": [
+                {
+                    "name": "Space",
+                    "type": "Button",
+                    "id": "aa3bd80f-9e99-4059-aaa1-0494a8c41f13",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8864ab14-40b0-4792-8a73-d2f267e862bf",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Space",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "151161b6-6435-4953-88f1-ab22520604da",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Space",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
