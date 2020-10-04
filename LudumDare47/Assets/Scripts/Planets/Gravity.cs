@@ -35,7 +35,13 @@ public class Gravity : MonoBehaviour
 			Camera.main.GetComponent<CameraFollow>().followTarget = gameObject;
 			// ship.gravity = gravity;
 			// ship.gravityCenter = transform;
+			GameManager.inOrbit = true;
 			Debug.Log("Entering planet orbit " + collision.GetComponent<GravityController>().gravity);
+		}
+
+		if (collision.CompareTag("FuelRefill"))
+		{
+			collision.GetComponent<FuelMovementScript>().EnterOrbit(transform);
 		}
 	}
 
@@ -47,7 +53,13 @@ public class Gravity : MonoBehaviour
 			collision.GetComponent<GravityController>().inAtmosphere = false;
 			ship.gravity = 0;
 			Camera.main.GetComponent<CameraFollow>().followTarget = collision.gameObject;
+			GameManager.inOrbit = false;
 			Debug.Log("Leaving planet orbit " + collision.GetComponent<GravityController>().gravity);
+		}
+
+		if (collision.CompareTag("FuelRefill"))
+		{
+			collision.GetComponent<FuelMovementScript>().ExitOrbit();
 		}
 	}
 }

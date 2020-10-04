@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FuelPickupScript : MonoBehaviour
-{   
+{
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Ship"))
@@ -20,7 +20,7 @@ public class FuelPickupScript : MonoBehaviour
                 }
             }
             Debug.Log(GameManager.currentFuel);
-            Destroy(this.gameObject);
+            Destroy(transform.parent.gameObject);
         }
     }
 }

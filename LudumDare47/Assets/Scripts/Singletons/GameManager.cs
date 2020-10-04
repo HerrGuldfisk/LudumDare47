@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 	public static float currentFuel;
 	public static float maxFuel = 100;
 
+	public static bool inOrbit;
 	private static bool destroyed;
 
 	private void Awake()
@@ -25,8 +26,6 @@ public class GameManager : MonoBehaviour
 		{
 			_instance = this;
 		}
-
-		
 	}
 
 	public static void PlayerDeath()

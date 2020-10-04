@@ -9,7 +9,6 @@ public class FuelSystem : MonoBehaviour
     private Slider fuelSlider;
     private bool shipTurnedOff = false;
     private bool inOrbit = false;
-
     private void Awake()
     {
         GameManager.currentFuel = GameManager.maxFuel;
