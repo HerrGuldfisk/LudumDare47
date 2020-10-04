@@ -46,5 +46,6 @@ public class FuelSystem : MonoBehaviour
     private void FuelIsEmpty()
     {
         GameManager.PlayerDeath();
+        GetComponent<Death>().PlayerDeath("Out of fuel...");
     }
 }

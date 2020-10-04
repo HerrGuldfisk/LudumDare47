@@ -15,8 +15,8 @@ public class FuelPickupScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ship"))
         {
-            Debug.Log("Picking up " + gameObject.name);
-            Debug.Log(GameManager.currentFuel);
+            //Debug.Log("Picking up " + gameObject.name);
+            //Debug.Log(GameManager.currentFuel);
 
             if (GameManager.currentFuel < GameManager.maxFuel)
             {
@@ -26,7 +26,7 @@ public class FuelPickupScript : MonoBehaviour
                     GameManager.currentFuel = GameManager.maxFuel;
                 }
             }
-            Debug.Log(GameManager.currentFuel);
+            //Debug.Log(GameManager.currentFuel);
             Destroy(transform.parent.gameObject);
         }
     }

@@ -12,6 +12,7 @@ TagManager:
   - FuelRefill
   - CrashText
   - CrashMenu
+  - ResourceBar
   layers:
   - Default
   - TransparentFX
