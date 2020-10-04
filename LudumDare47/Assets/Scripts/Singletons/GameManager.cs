@@ -30,7 +30,6 @@ public class GameManager : MonoBehaviour
 
 	public static void PlayerDeath()
 	{
-
 		if (!destroyed)
 		{
 			destroyed = true;

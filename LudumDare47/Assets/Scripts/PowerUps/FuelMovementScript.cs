@@ -7,9 +7,13 @@ public class FuelMovementScript : MonoBehaviour
     Rigidbody2D rb;
 
     private float startSpeed;
+    private float orbitSpeed = 10f;
+    private float followSpeed = 20f;
     private Vector2 startDir;
     private float currentDir;
     public bool inOrbit;
+    public bool chasePlayer = false;
+    public Transform playerTrans;
     private Transform rotationCenter = null;
 
     // Start is called before the first frame update
@@ -40,21 +44,38 @@ public class FuelMovementScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (inOrbit)
+        if (!chasePlayer)
         {
-            // Might want to use to rotate best direction
-            /*
-            if (Mathf.Abs(rb.velocity.x) > Mathf.Abs(rb.velocity.y))
+            if (inOrbit)
             {
-                currentDir = rb.velocity.normalized.x;
-            }
-            else
-            {
-                currentDir = rb.velocity.normalized.y;
-            }
-            */
+                // Might want to use to rotate best direction
+                /*
+                if (Mathf.Abs(rb.velocity.x) > Mathf.Abs(rb.velocity.y))
+                {
+                    currentDir = rb.velocity.normalized.x;
+                }
+                else
+                {
+                    currentDir = rb.velocity.normalized.y;
+                }
+                */
 
-            transform.RotateAround(rotationCenter.position, new Vector3(0, 0, 1), rb.velocity.magnitude * 10f * Time.deltaTime);
+                transform.RotateAround(rotationCenter.position, new Vector3(0, 0, 1), rb.velocity.magnitude * orbitSpeed * Time.deltaTime);
+            }
         }
+        else if (chasePlayer)
+        {
+            if (playerTrans != null)
+            {
+                Vector3 dir = (transform.position - playerTrans.position).normalized;
+                transform.position -= dir * followSpeed * Time.fixedDeltaTime;
+            }
+        }
+    }
+
+    public void FindPlayer(Transform pt)
+    {
+        Debug.Log("Foung player");
+        playerTrans = pt;
     }
 }
