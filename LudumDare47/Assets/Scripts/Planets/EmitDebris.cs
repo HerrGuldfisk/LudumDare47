@@ -19,7 +19,7 @@ public class EmitDebris : MonoBehaviour
     void Start()
     {
         collider = GetComponent<CircleCollider2D>();
-        radius = collider.radius * transform.localScale.x;
+        radius = collider.radius * transform.parent.transform.localScale.x;
 
         SpawnFuel();
 
@@ -32,7 +32,7 @@ public class EmitDebris : MonoBehaviour
 
         for (int i = 0; i < numFuel; i++)
         {
-            randomRadius = Random.Range(radius * 4f, radius * 8f);
+            randomRadius = Random.Range(radius * 1f, radius * 4f);
 
             float angle = i * Mathf.PI * 2 / numFuel;
             float x = Mathf.Cos(angle) * randomRadius;
@@ -54,7 +54,7 @@ public class EmitDebris : MonoBehaviour
 
         for (int i = 0; i < numDebris; i++)
         {
-            randomRadius = Random.Range(radius * 2f, radius * 4f);
+            randomRadius = Random.Range(radius * 1.5f, radius * 2f);
 
             float angle = i * Mathf.PI * 2 / numDebris;
             float x = Mathf.Cos(angle) * randomRadius;
@@ -65,7 +65,8 @@ public class EmitDebris : MonoBehaviour
 
             if (debrisPrefabs != null)
             {
-                Instantiate(debrisPrefabs[Random.Range(0,debrisPrefabs.Length-1)], pos, rot);
+				GameObject debri = Instantiate(debrisPrefabs[Random.Range(0,debrisPrefabs.Length-1)], pos, rot);
+				debri.GetComponent<Rotation>().rotationCenter = transform;
             }
         }
     }

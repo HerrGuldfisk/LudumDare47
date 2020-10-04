@@ -8,6 +8,8 @@ public class Rotation : MonoBehaviour
 	private float startRotation;
 	public float rotationSpeed  = 8f;
 
+	public Transform rotationCenter;
+
 	public bool randomSpeed;
     // Start is called before the first frame update
     void Start()
@@ -17,13 +19,14 @@ public class Rotation : MonoBehaviour
 
 		if (randomSpeed)
 		{
-			rotationSpeed = Random.Range(-0.08f, 0.08f);
+			rotationSpeed = Random.Range(-rotationSpeed, rotationSpeed);
 		}
     }
 
     // Update is called once per frame
     void Update()
     {
-		transform.Rotate(0, 0, rotationSpeed);
+		transform.RotateAround(rotationCenter.position, new Vector3(0, 0, 1), rotationSpeed);
+		// transform.Rotate(0, 0, rotationSpeed);
     }
 }
