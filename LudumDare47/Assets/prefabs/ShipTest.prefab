@@ -63,7 +63,7 @@ MonoBehaviour:
   fuelCostGas: 8
   fuelCost: 5
   fuelCostTurn: 4
-  flameSprite: {fileID: 0}
+  flameSprite: {fileID: 4773715736488184597}
   accSound: {fileID: 8300000, guid: 0cafdf9db38e9d3439fd5d9ec79353d3, type: 3}
   breakSound: {fileID: 8300000, guid: b4d0619f697268c459b415cf8ee91240, type: 3}
   accLoopSound: {fileID: 8300000, guid: 2d671dac4b9991d45bfafb380e8e04e7, type: 3}
