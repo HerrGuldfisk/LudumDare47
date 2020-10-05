@@ -10,7 +10,7 @@ public class PlanetInitScript : MonoBehaviour
 
     private CircleCollider2D atmoCollider;
     private float atmoColliderRadius;
-    private float randomRadiusMin = 1.2f;
+    private float randomRadiusMin = 1.4f;
     private float randomRadiusMax = 4f;
 
     public GameObject atmoObject;
