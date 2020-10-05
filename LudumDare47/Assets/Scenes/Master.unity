@@ -301,7 +301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7359503888608194773, guid: 566a887fab9b7b6479737f2398988793, type: 3}
       propertyPath: max
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7359503888608194773, guid: 566a887fab9b7b6479737f2398988793, type: 3}
       propertyPath: crashmenu
@@ -944,6 +944,10 @@ PrefabInstance:
     - target: {fileID: 7929158523308343177, guid: 9d71e8356864a45458badaf94932ad9a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7929158524756037680, guid: 9d71e8356864a45458badaf94932ad9a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7929158524820987838, guid: 9d71e8356864a45458badaf94932ad9a, type: 3}
       propertyPath: m_LocalPosition.x
