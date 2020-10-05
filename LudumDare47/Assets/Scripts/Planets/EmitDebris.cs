@@ -11,15 +11,15 @@ public class EmitDebris : MonoBehaviour
     private GameObject debrisPrefab;
     private int numDebris;
 
-    CircleCollider2D collider;
+    CircleCollider2D planetCollider;
     float radius;
     private float randomRadius;
 
     // Start is called before the first frame update
     void Start()
     {
-        collider = GetComponent<CircleCollider2D>();
-        radius = collider.radius * transform.parent.transform.localScale.x;
+        planetCollider = GetComponent<CircleCollider2D>();
+        radius = planetCollider.radius * (transform.localScale.x / 2);
 
         SpawnFuel();
 
@@ -28,11 +28,11 @@ public class EmitDebris : MonoBehaviour
 
     private void SpawnFuel()
     {
-        numFuel = Random.Range(1,5);
+        numFuel = Random.Range(1, 5);
 
         for (int i = 0; i < numFuel; i++)
         {
-            randomRadius = Random.Range(radius * 1f, radius * 4f);
+            randomRadius = Random.Range(radius * 1.3f, radius * 2.3f);
 
             float angle = i * Mathf.PI * 2 / numFuel;
             float x = Mathf.Cos(angle) * randomRadius;
@@ -50,11 +50,11 @@ public class EmitDebris : MonoBehaviour
 
     private void SpawnDebris()
     {
-        numDebris = Random.Range(0, 3);
+        numDebris = Random.Range(1, 7);
 
         for (int i = 0; i < numDebris; i++)
         {
-            randomRadius = Random.Range(radius * 1.5f, radius * 2f);
+            randomRadius = Random.Range(radius * 1.8f, radius * 2.8f);
 
             float angle = i * Mathf.PI * 2 / numDebris;
             float x = Mathf.Cos(angle) * randomRadius;
@@ -65,8 +65,8 @@ public class EmitDebris : MonoBehaviour
 
             if (debrisPrefabs != null)
             {
-				GameObject debri = Instantiate(debrisPrefabs[Random.Range(0,debrisPrefabs.Length-1)], pos, rot);
-				debri.GetComponent<Rotation>().rotationCenter = transform;
+                GameObject debri = Instantiate(debrisPrefabs[Random.Range(0, debrisPrefabs.Length - 1)], pos, rot);
+                debri.GetComponent<Rotation>().rotationCenter = transform;
             }
         }
     }

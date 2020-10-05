@@ -33,6 +33,7 @@ public class Gravity : MonoBehaviour
 			collision.GetComponent<GravityController>().gravity = gravity;
 			collision.GetComponent<GravityController>().inAtmosphere = true;
 			collision.GetComponent<ShipController>().EnterOrbitSound();
+			collision.GetComponent<LampController>().TurnOffLamps();
 			Camera.main.GetComponent<CameraFollow>().followTarget = gameObject;
 			Camera.main.GetComponent<CameraFollow>().planetZoom = transform.localScale.x * GetComponent<CircleCollider2D>().radius * 1.25f;
 			// ship.gravity = gravity;
@@ -55,6 +56,7 @@ public class Gravity : MonoBehaviour
 			ship = collision.GetComponent<GravityController>();
 			collision.GetComponent<GravityController>().inAtmosphere = false;
 			collision.GetComponent<ShipController>().ExitOrbitSound();
+			collision.GetComponent<LampController>().TurnOnLamps();
 			ship.gravity = 0;
 			Camera.main.GetComponent<CameraFollow>().followTarget = collision.gameObject;
 			GameManager.inOrbit = false;

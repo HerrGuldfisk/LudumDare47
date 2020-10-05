@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlanetResources : MonoBehaviour
 {
-    [SerializeField] int max = 10;
+    [SerializeField] int max = 20;
     [SerializeField] float spawnInterval = 0.2f;
     [SerializeField] GameObject resource;
     private int current;
@@ -18,7 +18,6 @@ public class PlanetResources : MonoBehaviour
 
     private void Awake()
     {
-        max = 20;
         current = Random.Range(2,max);
         isSpawning = false;
         slider = GetComponentInChildren<Slider>();
