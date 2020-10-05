@@ -8,9 +8,11 @@ public class CameraFollow : MonoBehaviour
 
 	private float smoothSpeed = 0.035f;
 	public float planetZoom = 50f;
-	private float shipZoom = 120f;
+	public float shipZoom = 120f;
 	private float zoomGoal;
 	private float currentZoom = 50f;
+	private float shipSpeed;
+	private GameObject ship;
 
 	// Update is called once per frame
 	void FixedUpdate()
@@ -39,14 +41,41 @@ public class CameraFollow : MonoBehaviour
 		{
 			zoomGoal = planetZoom;
 		}
-		currentZoom = Mathf.Lerp(currentZoom, zoomGoal, smoothSpeed);
+
+		if (shipZoom == 1500f)
+		{
+			currentZoom = Mathf.Lerp(currentZoom, zoomGoal, smoothSpeed * 0.1f);
+		}
+		else
+		{
+			currentZoom = Mathf.Lerp(currentZoom, zoomGoal, smoothSpeed);
+		}
+
 		Camera.main.orthographicSize = currentZoom;
+	}
+
+	private void Start()
+	{
+		ship = GameObject.FindGameObjectWithTag("Ship");
 	}
 
 	void MoveTowards(Transform target)
 	{
+		shipSpeed = Mathf.Pow(Mathf.Log10(ship.GetComponent<ShipController>().rb.velocity.magnitude), 2) / 2;
+		Debug.Log(shipSpeed);
 		Vector3 desiredPosition = new Vector3(target.position.x, target.position.y, -900);
-		Vector3 smoothedPosition = Vector3.Lerp(new Vector3(transform.position.x, transform.position.y, -900), desiredPosition, smoothSpeed);
-		transform.position = smoothedPosition;
+		Vector3 smoothedPosition;
+
+		if (followTarget.CompareTag("Ship"))
+		{
+			smoothedPosition = Vector3.Lerp(new Vector3(transform.position.x, transform.position.y, -900), desiredPosition, smoothSpeed * shipSpeed);
+			transform.position = smoothedPosition;
+		}
+		else
+		{
+			smoothedPosition = Vector3.Lerp(new Vector3(transform.position.x, transform.position.y, -900), desiredPosition, smoothSpeed);
+			transform.position = smoothedPosition;
+		}
+
 	}
 }

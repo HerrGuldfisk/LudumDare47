@@ -21,7 +21,7 @@ public class ShipController : MonoBehaviour
     [SerializeField] AudioClip crashSound;
     [SerializeField] AudioClip suckSound;
 
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     private FuelSystem fuelSystem;
     private audioManager audioManager;
     public InputAction gas;

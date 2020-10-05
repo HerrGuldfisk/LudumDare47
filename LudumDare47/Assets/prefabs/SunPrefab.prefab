@@ -128,8 +128,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5095512250395213366}
-  - component: {fileID: 5095512250395213365}
   - component: {fileID: 5095512250395213367}
+  - component: {fileID: 7646365337252692749}
   m_Layer: 8
   m_Name: SunPrefab
   m_TagString: Orbit
@@ -153,19 +153,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5095512250395213365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5095512250395213361}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10391adddcfb7c74f90556717f5831d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gravity: 10000
 --- !u!58 &5095512250395213367
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -182,6 +169,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 3
+--- !u!114 &7646365337252692749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5095512250395213361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ce68ae8291f6547b0c08f3b73cdff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravity: 200
 --- !u!114 &2707972295799227662
 MonoBehaviour:
   m_ObjectHideFlags: 0
