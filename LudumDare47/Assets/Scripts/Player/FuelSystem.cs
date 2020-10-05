@@ -28,7 +28,12 @@ public class FuelSystem : MonoBehaviour
         
         updateSlider();
 
-        if (!fuelEmpty && GameManager.currentFuel < 0)
+        if (GameManager.currentFuel < 0)
+        {
+            GameManager.currentFuel = 0;
+        }
+
+        if (!fuelEmpty && GameManager.currentFuel == 0)
         {
             FuelIsEmpty();
         }
@@ -37,10 +42,6 @@ public class FuelSystem : MonoBehaviour
     public void DepleteFuel(float amount)
     {
         GameManager.currentFuel -= amount;
-        if (GameManager.currentFuel < 0)
-        {
-            GameManager.currentFuel = 0;
-        }
     }
 
     public void addFuel(float amount)
