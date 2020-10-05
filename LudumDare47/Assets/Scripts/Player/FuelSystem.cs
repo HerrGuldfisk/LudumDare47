@@ -19,10 +19,12 @@ public class FuelSystem : MonoBehaviour
 
     void Update()
     {
+        /*
         if (GameManager.inOrbit)
         {
             GameManager.currentFuel -= standbyDepletion * Time.deltaTime;
         }
+        */
         
         updateSlider();
 
@@ -35,6 +37,10 @@ public class FuelSystem : MonoBehaviour
     public void DepleteFuel(float amount)
     {
         GameManager.currentFuel -= amount;
+        if (GameManager.currentFuel < 0)
+        {
+            GameManager.currentFuel = 0;
+        }
     }
 
     public void addFuel(float amount)
