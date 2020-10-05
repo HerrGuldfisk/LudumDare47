@@ -59,7 +59,7 @@ public class CameraFollow : MonoBehaviour
 		ship = GameObject.FindGameObjectWithTag("Ship");
 	}
 
-	void MoveTowards(Transform target)
+	public void MoveTowards(Transform target)
 	{
 		shipSpeed = Mathf.Pow(Mathf.Log10(ship.GetComponent<ShipController>().rb.velocity.magnitude), 2) / 2;
 		Vector3 desiredPosition = new Vector3(target.position.x, target.position.y, -900);
