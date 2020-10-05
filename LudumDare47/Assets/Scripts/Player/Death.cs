@@ -7,6 +7,7 @@ public class Death : MonoBehaviour
 {
     private GameObject crashmenu;
     private CanvasGroup canvasGroup;
+	private Text[] texts;
 
     private void Awake()
     {
@@ -18,7 +19,23 @@ public class Death : MonoBehaviour
     public void PlayerDeath(string deathText)
     {
         canvasGroup.alpha = 1;
-        crashmenu.GetComponentInChildren<Text>().text = deathText;
-        gameObject.SetActive(false);
+
+		texts = crashmenu.GetComponentsInChildren<Text>();
+
+		foreach (Text text in texts)
+		{
+			if (text.CompareTag("CrashText"))
+			{
+				text.text = deathText;
+			}
+
+			if (text.CompareTag("CollectedResourcesText"))
+			{
+				text.text = "COLECTED RESOURCES: " + GameManager.Instance.collectedResources;
+			}
+		}
+		// crashmenu.GetComponentsInChildren<Text>().text = deathText;
+		// crashmenu.GetComponentInChildren<Text>().text = "COLECTED RESOURCES: " + GameManager.Instance.collectedResources;
+		gameObject.SetActive(false);
     }
 }

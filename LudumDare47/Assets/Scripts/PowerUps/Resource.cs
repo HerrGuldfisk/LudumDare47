@@ -5,7 +5,7 @@ using UnityEngine;
 public class Resource : MonoBehaviour
 {
     public Transform target;
-    
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.transform == target)
@@ -18,10 +18,10 @@ public class Resource : MonoBehaviour
             if (collision.GetComponentInParent<EarthResources>())
             {
                 collision.GetComponentInParent<EarthResources>().addResource();
+				GameManager.Instance.collectedResources += 1;
             }
 
             Destroy(this.gameObject);
         }
     }
 }
-    

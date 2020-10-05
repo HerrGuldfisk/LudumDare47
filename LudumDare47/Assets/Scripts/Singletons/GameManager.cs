@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
 	public bool dead;
 	public GameObject startScreen;
 
+	public int collectedResources;
+
 	private void Awake()
 	{
 		DontDestroyOnLoad(gameObject);
@@ -34,6 +36,11 @@ public class GameManager : MonoBehaviour
 
 		dead = false;
 		isRunning = false;
+	}
+
+	private void Start()
+	{
+		collectedResources = 0;
 	}
 
 
@@ -52,6 +59,7 @@ public class GameManager : MonoBehaviour
 		{
 			isRunning = true;
 			startScreen.SetActive(false);
+			collectedResources = 0;
 		}
 	}
 

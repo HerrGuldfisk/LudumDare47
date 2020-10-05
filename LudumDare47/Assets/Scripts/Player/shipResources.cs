@@ -7,7 +7,7 @@ public class shipResources : MonoBehaviour
 {
     private Slider slider;
     [SerializeField] int max = 15;
-    private int current = 0;
+    [SerializeField] private int current = 0;
     public bool full;
     public bool empty;
 

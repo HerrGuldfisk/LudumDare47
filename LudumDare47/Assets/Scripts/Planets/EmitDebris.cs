@@ -28,7 +28,7 @@ public class EmitDebris : MonoBehaviour
 
     private void SpawnFuel()
     {
-        numFuel = Random.Range(1, 5);
+        numFuel = Random.Range(0, 3);
 
         for (int i = 0; i < numFuel; i++)
         {
@@ -55,6 +55,11 @@ public class EmitDebris : MonoBehaviour
         for (int i = 0; i < numDebris; i++)
         {
             randomRadius = Random.Range(radius * 1.8f, radius * 2.8f);
+
+			if(randomRadius < 20f)
+			{
+				randomRadius = 20f;
+			}
 
             float angle = i * Mathf.PI * 2 / numDebris;
             float x = Mathf.Cos(angle) * randomRadius;

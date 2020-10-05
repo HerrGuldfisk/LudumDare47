@@ -14,6 +14,7 @@ TagManager:
   - CrashMenu
   - ResourceBar
   - ScreenMessage
+  - CollectedResourcesText
   layers:
   - Default
   - TransparentFX
