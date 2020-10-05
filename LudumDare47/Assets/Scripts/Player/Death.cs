@@ -31,7 +31,7 @@ public class Death : MonoBehaviour
 
 			if (text.CompareTag("CollectedResourcesText"))
 			{
-				text.text = "COLECTED RESOURCES: " + GameManager.Instance.collectedResources;
+				text.text = "COLLECTED RESOURCES: " + GameManager.Instance.collectedResources;
 			}
 		}
 		// crashmenu.GetComponentsInChildren<Text>().text = deathText;
