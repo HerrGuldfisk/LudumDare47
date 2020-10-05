@@ -195,6 +195,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Asteroid_02
       objectReference: {fileID: 0}
+    - target: {fileID: 5303742727758647055, guid: 6759fe780c4e2d047850fcab02a14aa4, type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6759fe780c4e2d047850fcab02a14aa4, type: 3}
 --- !u!4 &5455267560812903282 stripped

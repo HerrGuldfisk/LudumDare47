@@ -322,6 +322,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5095512250395213366}
     m_Modifications:
+    - target: {fileID: 1046907208251024409, guid: b55e66afc6c7631488bc9e2edd1d70d3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891884531121559376, guid: b55e66afc6c7631488bc9e2edd1d70d3, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2784604848388007869, guid: b55e66afc6c7631488bc9e2edd1d70d3, type: 3}
       propertyPath: m_Name
       value: Planet
@@ -406,6 +414,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[7]
       value: 
       objectReference: {fileID: 2100000, guid: 1d9d9de5ad117a04c9f74313f6b3071e, type: 2}
+    - target: {fileID: 8129635601548236462, guid: b55e66afc6c7631488bc9e2edd1d70d3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2587043071297691196, guid: b55e66afc6c7631488bc9e2edd1d70d3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b55e66afc6c7631488bc9e2edd1d70d3, type: 3}
