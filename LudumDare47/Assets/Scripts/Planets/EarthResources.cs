@@ -18,6 +18,8 @@ public class EarthResources : MonoBehaviour
     private GameObject crashmenu;
     private CanvasGroup canvasGroup;
 
+	private Text[] texts;
+
 
     private void Awake()
     {
@@ -104,7 +106,25 @@ public class EarthResources : MonoBehaviour
     private void win()
     {
         canvasGroup.alpha = 1;
-        crashmenu.GetComponentInChildren<Text>().text = "THE EARTH WAS SAVED!!!";
-        shipResources.gameObject.SetActive(false);
+
+		// crashmenu.GetComponentsInChildren<Text>().text = "THE EARTH WAS SAVED!!!";
+
+		texts = crashmenu.GetComponentsInChildren<Text>();
+
+		foreach (Text text in texts)
+		{
+			if(text.CompareTag("CrashText"))
+			{
+				text.text = "THE EARTH WAS SAVED";
+			}
+
+			if (text.CompareTag("CollectedResourcesText"))
+			{
+				text.text = "";
+			}
+		}
+
+
+		shipResources.gameObject.SetActive(false);
     }
 }
