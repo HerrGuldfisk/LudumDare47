@@ -6,11 +6,11 @@ public class Rotation : MonoBehaviour
 {
 
 	private float startRotation;
-	public float rotationSpeed  = 14f;
+	public float rotationSpeed  = 1f;
 
 	public Transform rotationCenter;
 
-	public bool randomSpeed;
+	public bool randomSpeed = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +20,7 @@ public class Rotation : MonoBehaviour
 
 		if (randomSpeed)
 		{
-			rotationSpeed = Random.Range(-rotationSpeed, rotationSpeed);
+			rotationSpeed = 0.05f + Random.Range(-rotationSpeed, rotationSpeed);
 		}
     }
 

@@ -37,7 +37,7 @@ public class EarthResources : MonoBehaviour
         if (slider)
         {
             slider.value = (float)current / (float)max;
-            text.text = current.ToString();
+            text.text = current.ToString() + "/" + max.ToString();
         }
     }
 

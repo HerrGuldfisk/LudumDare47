@@ -18,7 +18,8 @@ public class PlanetResources : MonoBehaviour
 
     private void Awake()
     {
-        current = max;
+        max = 20;
+        current = Random.Range(2,max);
         isSpawning = false;
         slider = GetComponentInChildren<Slider>();
         text = GetComponentInChildren<Text>();
