@@ -16,7 +16,7 @@ public class ShipWorldBounds : MonoBehaviour
 		if (pos.x > xMax)
 		{
 			Vector3 offset = LocalCameraPos();
-			this.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x * -1 + 0.5f, this.gameObject.transform.position.y, this.gameObject.transform.position.z);
+			this.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x * -1f, this.gameObject.transform.position.y, this.gameObject.transform.position.z);
 			Camera.main.transform.position = this.gameObject.transform.position + offset;
 			Camera.main.GetComponent<CameraFollow>().MoveTowards(this.gameObject.transform);
 		}
@@ -24,7 +24,7 @@ public class ShipWorldBounds : MonoBehaviour
 		if (pos.x < -xMax)
 		{
 			Vector3 offset = LocalCameraPos();
-			this.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x * -1 - 0.5f, this.gameObject.transform.position.y, this.gameObject.transform.position.z);
+			this.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x * -1, this.gameObject.transform.position.y, this.gameObject.transform.position.z);
 			Camera.main.transform.position = this.gameObject.transform.position + offset;
 			Camera.main.GetComponent<CameraFollow>().MoveTowards(this.gameObject.transform);
 		}
@@ -33,7 +33,7 @@ public class ShipWorldBounds : MonoBehaviour
 		if (pos.y > yMax)
 		{
 			Vector3 offset = LocalCameraPos();
-			this.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y * -1 + 0.5f, this.gameObject.transform.position.z);
+			this.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y * -1, this.gameObject.transform.position.z);
 			Camera.main.transform.position = this.gameObject.transform.position + offset;
 			Camera.main.GetComponent<CameraFollow>().MoveTowards(this.gameObject.transform);
 		}
@@ -41,7 +41,7 @@ public class ShipWorldBounds : MonoBehaviour
 		if (pos.y < -yMax)
 		{
 			Vector3 offset = LocalCameraPos();
-			this.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y * -1 + 0.5f, this.gameObject.transform.position.z);
+			this.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y * -1, this.gameObject.transform.position.z);
 			Camera.main.transform.position = this.gameObject.transform.position + offset;
 			Camera.main.GetComponent<CameraFollow>().MoveTowards(this.gameObject.transform);
 		}
