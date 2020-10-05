@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
 		if( !dead && value.Get<float>() == 1)
 		{
 			isRunning = true;
+			startScreen.GetComponent<StartMenu>().hideGameElements(false);
 			startScreen.SetActive(false);
 			collectedResources = 0;
 		}
