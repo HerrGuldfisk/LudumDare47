@@ -49,7 +49,8 @@ public class EarthResources : MonoBehaviour
             if (!shipResources.empty)
             {
                 isSpawning = true;
-            }
+				collision.GetComponent<ShipController>().PlaySuckSound();
+			}
         }
     }
 
@@ -58,7 +59,8 @@ public class EarthResources : MonoBehaviour
         if (collision.CompareTag("Ship"))
         {
             isSpawning = false;
-        }
+			collision.GetComponent<ShipController>().StopSuckSound();
+		}
     }
 
     void Update()
