@@ -52,7 +52,7 @@ public class PlanetInitScript : MonoBehaviour
         GetComponent<Gravity>().gravity = Mathf.Clamp(gravity, randomGravMin, randomGravMax);
 
         Color tmpColor = atmoRenderer.color;
-        tmpColor.a = (gravity / (randomGravMax - randomGravMin) * 50/100);
+        tmpColor.a = Mathf.Clamp(Mathf.Pow((gravity / (randomGravMax - randomGravMin)), 2f) * 30/100, 0.05f, 0.7f);
         atmoRenderer.color = tmpColor;
 
 
