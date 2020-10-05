@@ -122,6 +122,46 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Gas
       m_Flags: 8
+    - m_Name: 2D Vector
+      m_Id: 6a6370ba-a921-44a8-bd88-c330c07e3fbc
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Gas
+      m_Flags: 4
+    - m_Name: up
+      m_Id: 918e4375-478b-4512-8ce4-2a50d3d182d9
+      m_Path: <Gamepad>/buttonSouth
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Gas
+      m_Flags: 8
+    - m_Name: down
+      m_Id: 4fb334b3-d5f4-4c96-a91e-b1e3fee8beff
+      m_Path: <Gamepad>/buttonEast
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Gas
+      m_Flags: 8
+    - m_Name: left
+      m_Id: b34300dd-1729-44ba-9889-9008fea6307a
+      m_Path: <Gamepad>/leftStick/left
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Gas
+      m_Flags: 8
+    - m_Name: right
+      m_Id: f9a8267e-fed5-4e51-961a-02cb7e05171b
+      m_Path: <Gamepad>/leftStick/right
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Gas
+      m_Flags: 8
 --- !u!114 &1515619420893600985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10297,6 +10337,14 @@ PrefabInstance:
     - target: {fileID: 191901868064833739, guid: 6e111eaaf5b30374aaf11a8f1e177a18, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 215955076493060367, guid: 6e111eaaf5b30374aaf11a8f1e177a18, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 502980453074354525, guid: 6e111eaaf5b30374aaf11a8f1e177a18, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 712154883617020529, guid: 6e111eaaf5b30374aaf11a8f1e177a18, type: 3}
       propertyPath: m_Name

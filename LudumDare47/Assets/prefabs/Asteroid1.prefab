@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 0.05
+  rotationCenter: {fileID: 0}
   randomSpeed: 0
 --- !u!1 &1885635769832009489
 GameObject:

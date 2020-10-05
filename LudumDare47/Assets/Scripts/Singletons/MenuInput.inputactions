@@ -47,6 +47,17 @@
                 },
                 {
                     "name": "",
+                    "id": "2c2f65df-6435-4f2d-8f12-91324b94ae9d",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Space",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "be733842-5d82-442c-8699-d2d7aababcd2",
                     "path": "<Keyboard>/escape",
                     "interactions": "",

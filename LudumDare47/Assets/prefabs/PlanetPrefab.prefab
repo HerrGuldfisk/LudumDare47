@@ -322,6 +322,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5095512250395213366}
     m_Modifications:
+    - target: {fileID: 1046907208251024409, guid: b55e66afc6c7631488bc9e2edd1d70d3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891884531121559376, guid: b55e66afc6c7631488bc9e2edd1d70d3, type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2784604848388007869, guid: b55e66afc6c7631488bc9e2edd1d70d3, type: 3}
       propertyPath: m_Name
       value: Planet
