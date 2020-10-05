@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class showIfTargetIsOnScreen : MonoBehaviour
 {
-    [SerializeField] SpriteRenderer spriteToHide;
+    [SerializeField] SpriteRenderer[] spritesToHide;
     [SerializeField] Transform objectToCheck;
     [SerializeField] bool hideIfHidden;
 
@@ -15,11 +15,17 @@ public class showIfTargetIsOnScreen : MonoBehaviour
         
         if (onScreen)
         {
-            spriteToHide.enabled = hideIfHidden;
+            foreach(SpriteRenderer sprite in spritesToHide)
+            {
+                sprite.enabled = hideIfHidden;
+            }
         }
         else
         {
-            spriteToHide.enabled = !hideIfHidden;
+            foreach (SpriteRenderer sprite in spritesToHide)
+            {
+                sprite.enabled = !hideIfHidden;
+            }
         }
     }
 }
